@@ -1,0 +1,88 @@
+<xml version="1.0" encoding="ISO-8859-1">
+  <cabecera>
+    <fondo color="16187287"/>
+    <letra color="65793"/>
+    <nombre titulo=" ACCIONES. SUSANA SÁNCHEZ PIMENTEL"/>
+    <componentes filas="4" columnas="7"/>
+  </cabecera>
+  <celda>
+    <coordenadas fila="1" columna="1"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/23392.png" audio="AUDIOS/0/14.mp3" texto="JUGAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="2"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/8651.png" audio="AUDIOS/0/629.mp3" texto="PASEAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="3"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2371.png" audio="AUDIOS/0/7546.mp3" texto="DUCHAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="4"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2447.png" audio="AUDIOS/0/9.mp3" texto="LEER" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="5"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2380.png" audio="AUDIOS/0/2973.mp3" texto="ESCRIBIR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="6"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2348.png" audio="AUDIOS/0/7.mp3" texto="PINTAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="7"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2387.png" audio="AUDIOS/0/1433.mp3" texto="ESTUDIAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="2" columna="1"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2369.png" audio="AUDIOS/0/25.mp3" texto="DORMIR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="2" columna="7"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2474.png" audio="AUDIOS/0/3.mp3" texto="VER" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="1"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2276.png" audio="AUDIOS/0/2.mp3" texto="BEBER" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="3"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/5441.png" audio="AUDIOS/0/9177.mp3" texto="QUIERO" categoria="5" color="16724889"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="5"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/6156.png" audio="AUDIOS/0/9178.mp3" texto="NO QUIERO" categoria="5" color="16724889"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="7"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2381.png" audio="AUDIOS/0/4.mp3" texto="OÍR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="1"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2349.png" audio="AUDIOS/0/1.mp3" texto="COMER" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="4"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2617.png" audio="AUDIOS/0/2758.mp3" texto="YO" categoria="6" color="16777215"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="7"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/3345.png" audio="AUDIOS/0/17.mp3" texto="HABLAR" categoria="3" color="3381504"/>
+  </celda>
+</xml>

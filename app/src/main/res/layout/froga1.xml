@@ -1,0 +1,174 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tableView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:weightSum="4" >
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:weightSum="4" >
+
+        <ImageButton
+            android:id="@+id/imageButton11"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton12"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:text="dialer_one"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton13"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:text="dialer_one"
+            android:textSize="20sp" />
+        <ImageButton
+            android:id="@+id/imageButton14"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:text="dialer_one"
+            android:textSize="20sp" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:weightSum="4" >
+
+
+
+        <ImageButton
+            android:id="@+id/imageButton21"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:text="dialer_one"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton22"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton23"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:text="dialer_one"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton24"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:text="dialer_one"
+            android:textSize="20sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:weightSum="3" >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:gravity="center_vertical"
+            android:text="dialer_seven"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:gravity="center_vertical"
+            android:text="dialer_eight"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:gravity="center_vertical"
+            android:text="dialer_nine"
+            android:textSize="20sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:weightSum="3" >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:layout_gravity="center_vertical"
+            android:text="dialer_star"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:layout_gravity="center_vertical"
+            android:text="dialer_zero"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:layout_gravity="center_vertical"
+            android:text="dialer_pound"
+            android:textSize="20sp" />
+    </TableRow>
+
+</TableLayout>

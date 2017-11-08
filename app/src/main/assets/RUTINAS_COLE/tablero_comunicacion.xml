@@ -1,0 +1,128 @@
+<xml version="1.0" encoding="ISO-8859-1">
+  <cabecera>
+    <fondo color="787456"/>
+    <letra color="13421772"/>
+    <nombre titulo="RUTINAS COLE - ARASAAC - J.M.MARCOS, DAVID ROMERO"/>
+    <componentes filas="4" columnas="6"/>
+  </cabecera>
+  <celda>
+    <coordenadas fila="1" columna="1"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/8989.png" audio="AUDIOS/0/1994.mp3" texto="DESPERTAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="2"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/6549.png" audio="AUDIOS/0/7703.mp3" texto="LEVANTAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="3"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/16709.png" audio="AUDIOS/0/6174.mp3" texto="HACER CACA" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="4"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/16713.png" audio="AUDIOS/0/6175.mp3" texto="HACER PIS" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="5"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/26803.png" audio="AUDIOS/0/7546.mp3" texto="DUCHAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="1" columna="6"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/22106.png" audio="AUDIOS/0/38.mp3" texto="SECAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="2" columna="1"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/27485.png" audio="AUDIOS/0/38.mp3" texto="SECAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="2" columna="2"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/6627.png" audio="AUDIOS/0/968.mp3" texto="VESTIRSE" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="2" columna="3"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/7012.png" audio="AUDIOS/0/2845.mp3" texto="DESAYUNAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="2" columna="4"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/6971.png" audio="AUDIOS/0/831.mp3" texto="CEPILLAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="2" columna="5"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2475.png" audio="AUDIOS/0/921.mp3" texto="MOCHILA" categoria="2" color="16737792"/>
+  </celda>
+  <celda>
+    <coordenadas fila="2" columna="6"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/6606.png" audio="AUDIOS/0/21.mp3" texto="SALIR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="1"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/2499.png" audio="AUDIOS/0/5537.mp3" texto="PARADA" categoria="2" color="16737792"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="2"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/28173.png" audio="AUDIOS/0/12627.mp3" texto="AUTOBÚS" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="3"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/adiós_1.png" audio="AUDIOS/0/10835.mp3" texto="DESPEDIR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="4"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/11540.png" audio="AUDIOS/0/785.mp3" texto="VIAJAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="5"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/3082.png" audio="AUDIOS/0/151.mp3" texto="COLEGIO" categoria="2" color="16737792"/>
+  </celda>
+  <celda>
+    <coordenadas fila="3" columna="6"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/entrada_3.png" audio="AUDIOS/0/20.mp3" texto="ENTRAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="1"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/22147.png" audio="AUDIOS/0/49.mp3" texto="TRABAJAR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="2"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/27339.png" audio="AUDIOS/0/1551.mp3" texto="RECREO" categoria="2" color="16737792"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="3"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/9824.png" audio="AUDIOS/0/133.mp3" texto="COMEDOR" categoria="2" color="16737792"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="4"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/8166.png" audio="AUDIOS/0/6360.mp3" texto="METER" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="5"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/salida_2.png" audio="AUDIOS/0/21.mp3" texto="SALIR" categoria="3" color="3381504"/>
+  </celda>
+  <celda>
+    <coordenadas fila="4" columna="6"/>
+    <ocupada flag="true"/>
+    <pictograma imagen="IMAGENES/6964.png" audio="AUDIOS/0/131.mp3" texto="CASA" categoria="2" color="16737792"/>
+  </celda>
+</xml>
