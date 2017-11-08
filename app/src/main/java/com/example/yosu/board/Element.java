@@ -1,12 +1,16 @@
 
 package com.example.yosu.board;
 
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -49,4 +53,27 @@ public class Element {
 
     }
 
+    public String getAudio(AssetManager assetManager) throws  IOException{
+        return this.audio;
+    }
+
+    public void playAudio(AssetManager assetManager) {
+        String ruta="SENYALA_VERDURAS" + File.separator +this.audio;
+        try{
+
+          AssetFileDescriptor fd=assetManager.openFd(ruta);
+          MediaPlayer mp=new MediaPlayer();
+          mp.setDataSource(fd);
+          mp.prepare();
+          mp.start();
+            Log.d("Yosu", "playAudio");
+
+
+        }catch (Exception e){
+            Log.d("Yosu", "Imposible encontrar el audio "+ruta);
+
+        }
+
+
+    }
 }

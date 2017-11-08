@@ -52,9 +52,18 @@ public class MainActivity extends AppCompatActivity {
             for (int columna=1; columna<=board.getColumnas();columna++) {
                 int imgid = res.getIdentifier("imageButton"+ fila + columna, "id", getApplicationContext().getPackageName());
                 ImageButton btn = findViewById(imgid);
-                AssetManager assetManager = getBaseContext().getAssets();
+                final AssetManager assetManager = getBaseContext().getAssets();
                 try {
                     btn.setImageBitmap(board.getElement(cont).getImagen(getAssets()));
+
+                    final Element element=board.getElement(cont);
+                    btn.setOnClickListener( new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v){
+                                element.playAudio(assetManager);
+                            }
+                    }
+                    );
                     cont++;
                 } catch (Exception e) {
                     Log.d("Yosu", e.getMessage());
