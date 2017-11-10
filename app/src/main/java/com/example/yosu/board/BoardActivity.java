@@ -21,6 +21,8 @@ import java.io.InputStream;
 
 public class BoardActivity extends AppCompatActivity {
 
+    private String folderName="ACCIONES";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +38,9 @@ public class BoardActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
+        String folderName=getIntent().getStringExtra("BOARD");
         AssetManager assetManager = getBaseContext().getAssets();
-        Board matriz=new Board("ACCIONES");
+        Board matriz=new Board(folderName);
         AraboardParser parser=new AraboardParser(assetManager, matriz);
         cargaBoard(matriz);
 

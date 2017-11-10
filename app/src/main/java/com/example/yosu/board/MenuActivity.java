@@ -58,13 +58,15 @@ public class MenuActivity extends AppCompatActivity {
                     InputStream bitmap=getBaseContext().getAssets().open(boardData[fila][0] + File.separator +"IMAGENES"+ File.separator+boardData[fila][1] );
                     Bitmap img= BitmapFactory.decodeStream(bitmap);
                     btn.setImageBitmap(img);
+                    final int cual=fila;
                     btn.setOnClickListener( new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v){
-                        Intent i=new Intent(getBaseContext(),BoardActivity.class);
-                        startActivity(i);
+                                                    Intent i=new Intent(getBaseContext(),BoardActivity.class);
+                                                    i.putExtra("BOARD",boardData[cual][0]);
+                                                    startActivity(i);
 
-                         }
+                                                }
                                             }
                     );
                     cont++;
