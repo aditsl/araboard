@@ -19,7 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class BoardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +38,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         AssetManager assetManager = getBaseContext().getAssets();
-        Board matriz=new Board("SENYALA_VERDURAS");
+        Board matriz=new Board("ACCIONES");
         AraboardParser parser=new AraboardParser(assetManager, matriz);
         cargaBoard(matriz);
 
     }
 
     private void cargaBoard(Board board){
-
         Resources res=getResources();
         int cont=0;
         for (int fila=1; fila<=board.getFilas();fila++){

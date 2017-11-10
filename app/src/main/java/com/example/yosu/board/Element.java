@@ -25,9 +25,14 @@ public class Element {
     private String imagen;
     private String audio;
     private String texto;
+    private String directorio;
 
     public void setFila(int fila){
         this.fila=fila;
+    }
+
+    public Element(String directorio){
+        this.directorio=directorio;
     }
 
     public void setColumna(int columna){
@@ -47,7 +52,7 @@ public class Element {
 
     public Bitmap getImagen(AssetManager assetManager) throws  IOException{
 
-             InputStream bitmap=assetManager.open("SENYALA_VERDURAS" + File.separator +this.imagen);
+             InputStream bitmap=assetManager.open(directorio + File.separator +this.imagen);
              Bitmap img= BitmapFactory.decodeStream(bitmap);
              return img;
 
@@ -58,7 +63,7 @@ public class Element {
     }
 
     public void playAudio(AssetManager assetManager) {
-        String ruta="SENYALA_VERDURAS" + File.separator +this.audio;
+        String ruta=directorio + File.separator +this.audio;
         try{
 
           AssetFileDescriptor fd=assetManager.openFd(ruta);

@@ -43,5 +43,9 @@ public class Board {
         return  elements.get(i);
     }
 
+    public String getCarpeta(){
+        return this.carpeta;
+    }
+
 
 }

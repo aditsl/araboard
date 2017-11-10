@@ -1,9 +1,26 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TablaPrincipal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:stretchColumns="*"
+    android:weightSum="5"
+    >
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+
+        >
+
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tableView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:stretchColumns="*"
+
     android:weightSum="4" >
 
     <TableRow
@@ -14,7 +31,8 @@
 
         <ImageButton
             android:id="@+id/imageButton11"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -23,7 +41,8 @@
 
         <ImageButton
             android:id="@+id/imageButton12"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -33,7 +52,8 @@
 
         <ImageButton
             android:id="@+id/imageButton13"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -42,7 +62,8 @@
             android:textSize="20sp" />
         <ImageButton
             android:id="@+id/imageButton14"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -60,10 +81,10 @@
         android:weightSum="4" >
 
 
-
         <ImageButton
             android:id="@+id/imageButton21"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -73,17 +94,19 @@
 
         <ImageButton
             android:id="@+id/imageButton22"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:soundEffectsEnabled="false"
-
+            android:text="dialer_one"
             android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/imageButton23"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -93,7 +116,8 @@
 
         <ImageButton
             android:id="@+id/imageButton24"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -107,43 +131,123 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:weightSum="3" >
+        android:weightSum="4" >
 
         <ImageButton
+            android:id="@+id/imageButton31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:soundEffectsEnabled="false"
-            android:gravity="center_vertical"
-            android:text="dialer_seven"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:text="dialer_star"
             android:textSize="20sp" />
 
         <ImageButton
+            android:id="@+id/imageButton32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:soundEffectsEnabled="false"
-            android:gravity="center_vertical"
-            android:text="dialer_eight"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:text="dialer_zero"
             android:textSize="20sp" />
 
         <ImageButton
+            android:id="@+id/imageButton33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:soundEffectsEnabled="false"
-            android:gravity="center_vertical"
-            android:text="dialer_nine"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:text="dialer_pound"
             android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+
+            android:text="dialer_star"
+            android:textSize="20sp" />
+
+
     </TableRow>
 
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:weightSum="3" >
+        android:weightSum="4" >
 
         <ImageButton
+            android:id="@+id/imageButton41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:text="dialer_star"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:text="dialer_zero"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:text="dialer_pound"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:text="dialer_star"
+            android:textSize="20sp" />
+
+
+    </TableRow>
+
+
+
+</TableLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_weight="1"
+
+    >
+        <ImageButton
+            android:id="@+id/imageButton01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -152,23 +256,7 @@
             android:text="dialer_star"
             android:textSize="20sp" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:layout_gravity="center_vertical"
-            android:text="dialer_zero"
-            android:textSize="20sp" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:layout_gravity="center_vertical"
-            android:text="dialer_pound"
-            android:textSize="20sp" />
     </TableRow>
 
 </TableLayout>

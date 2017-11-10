@@ -23,18 +23,13 @@ public class AraboardParser {
     public  AraboardParser(  AssetManager assetManager, Board board ){
        BufferedReader reader = null;
        try {
-
-
-
-           reader = new BufferedReader(new InputStreamReader(assetManager.open( "SENYALA_VERDURAS" + File.separator + "tablero_comunicacion.xml"),"ISO-8859-1"));
+           reader = new BufferedReader(new InputStreamReader(assetManager.open( board.getCarpeta() + File.separator + "tablero_comunicacion.xml"),"ISO-8859-1"));
             //Initialize de parser
            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
            factory.setNamespaceAware(true);
            XmlPullParser xpp = factory.newPullParser();
            xpp.setInput(reader);
            int eventType = xpp.getEventType();
-
-
            while (eventType != XmlPullParser.END_DOCUMENT) {
                if(eventType == XmlPullParser.START_DOCUMENT) {
                    Log.d("Yosu","Start document");
@@ -43,7 +38,7 @@ public class AraboardParser {
                } else if(eventType == XmlPullParser.START_TAG) {
                    Log.d("Yosu","Start tag "+xpp.getName());
                    if (xpp.getName().equals("celda")){
-                       Element celda=new Element();
+                       Element celda=new Element(board.getCarpeta());
                        eventType=xpp.nextTag();
                        celda.setFila(Integer.parseInt(xpp.getAttributeValue(null, "fila")));
                        celda.setColumna(Integer.parseInt(xpp.getAttributeValue(null, "columna")));
