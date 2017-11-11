@@ -39,6 +39,9 @@ public class MenuActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        //
+        Frase frase;
+        frase=Frase.getInstance();
         AssetManager assetManager = getBaseContext().getAssets();
         listBoards(assetManager);
         cargaMenu();

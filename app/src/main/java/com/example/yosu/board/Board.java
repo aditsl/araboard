@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 public class Board {
 
+
+
     private List<Element> elements;
     private String carpeta;
     private int filas,columnas;
@@ -16,6 +18,10 @@ public class Board {
     Board(String carpeta){
         elements = new ArrayList<Element>();
         this.carpeta=carpeta;
+    }
+
+    Board(){
+        elements = new ArrayList<Element>();
     }
 
     public void addElement(Element e){

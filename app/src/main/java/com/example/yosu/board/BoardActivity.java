@@ -1,5 +1,6 @@
 package com.example.yosu.board;
 
+import android.app.ActionBar;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,6 +15,9 @@ import android.view.MenuItem;
 import android.content.res.AssetManager;
 import android.widget.ImageButton;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -22,6 +26,7 @@ import java.io.InputStream;
 public class BoardActivity extends AppCompatActivity {
 
     private String folderName="ACCIONES";
+    Frase frase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,7 @@ public class BoardActivity extends AppCompatActivity {
         String folderName=getIntent().getStringExtra("BOARD");
         AssetManager assetManager = getBaseContext().getAssets();
         Board matriz=new Board(folderName);
+        frase=Frase.getInstance();
         AraboardParser parser=new AraboardParser(assetManager, matriz);
         cargaBoard(matriz);
 
@@ -56,12 +62,26 @@ public class BoardActivity extends AppCompatActivity {
                 final AssetManager assetManager = getBaseContext().getAssets();
                 try {
                     btn.setImageBitmap(board.getElement(cont).getImagen(getAssets()));
-
+                    final BoardActivity bA=this;
                     final Element element=board.getElement(cont);
                     btn.setOnClickListener( new View.OnClickListener() {
                             @Override
                             public void onClick(View v){
                                 element.playAudio(assetManager);
+                                frase.addElement(element);
+                                LinearLayout ll=findViewById(R.id.Frase);
+                                ImageButton btnNew=new ImageButton(bA);
+                                try {
+                                    btnNew.setImageBitmap(element.getImagen(getAssets()));
+                                    btnNew.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                                    btnNew.setAdjustViewBounds(true);
+                                    LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
+                                    btnNew.setLayoutParams(layoutParams);
+                                    ll.addView(btnNew);
+
+                                }catch (Exception e){
+
+                                }
                             }
                     }
                     );
