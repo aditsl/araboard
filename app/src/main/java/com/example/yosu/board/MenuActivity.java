@@ -125,8 +125,10 @@ public class MenuActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if (id == R.id.action_download){
+            Intent i=new Intent(getBaseContext(),DownloadActivity.class);
+            startActivity(i);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
