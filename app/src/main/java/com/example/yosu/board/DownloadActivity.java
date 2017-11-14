@@ -56,7 +56,6 @@ public class DownloadActivity extends AppCompatActivity {
         Log.d("Yosu", "Descargo " + urlpath);
         if (urlpath.length() == 0) {
             showAlert(getString(R.string.empty_url), getString(R.string.fill_url));
-
         }
         if (!Utils.checkURL(urlpath)) {
             showAlert(getString(R.string.wrong_url), getString(R.string.fill_url));
@@ -66,12 +65,9 @@ public class DownloadActivity extends AppCompatActivity {
                 String[] perms = {"android.permission.WRITE_EXTERNAL_STORAGE"};
                 int permsRequestCode = 200;
                 requestPermissions(perms, permsRequestCode);
-
             } else {
                 new DownloadFileAsync().execute(urlpath);
-
             }
-
         }
     }
 
