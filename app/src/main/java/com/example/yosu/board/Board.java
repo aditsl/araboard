@@ -49,6 +49,10 @@ public class Board {
         return  elements.get(i);
     }
 
+    public int getElementSize(){
+        return elements.size();
+    }
+
     public String getCarpeta(){
         return this.carpeta;
     }

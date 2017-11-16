@@ -49,6 +49,7 @@ public class Element {
     public void setTexto(String texto){
         this.texto=texto;
     }
+    public String getTexto() {return this.texto; }
 
     public Bitmap getImagen(AssetManager assetManager) throws  IOException{
 
@@ -62,7 +63,7 @@ public class Element {
         return this.audio;
     }
 
-    public void playAudio(AssetManager assetManager) {
+    public  void playAudio(AssetManager assetManager) {
         String ruta=directorio + File.separator +this.audio;
         try{
 
@@ -72,8 +73,6 @@ public class Element {
           mp.prepare();
           mp.start();
             Log.d("Yosu", "playAudio");
-
-
         }catch (Exception e){
             Log.d("Yosu", "Imposible encontrar el audio "+ruta);
 

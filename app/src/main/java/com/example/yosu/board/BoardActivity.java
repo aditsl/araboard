@@ -13,10 +13,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.res.AssetManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 import java.io.File;
@@ -49,19 +51,34 @@ public class BoardActivity extends AppCompatActivity {
         frase=Frase.getInstance();
         AraboardParser parser=new AraboardParser(assetManager, matriz);
         cargaBoard(matriz);
+        ImageButton  playbtn = (ImageButton) findViewById(R.id.playButton);
+        playbtn.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View view) {
+                                                frase.play(getAssets());
+                                       }
+                                   }
+
+
+        );
+
+
 
     }
 
     private void cargaBoard(Board board){
         Resources res=getResources();
         int cont=0;
-        for (int fila=1; fila<=board.getFilas();fila++){
-            for (int columna=1; columna<=board.getColumnas();columna++) {
+        for (int fila=1; fila<=4;fila++){
+            for (int columna=1; columna<=4;columna++) {
                 int imgid = res.getIdentifier("imageButton"+ fila + columna, "id", getApplicationContext().getPackageName());
+                int txtid = res.getIdentifier("txtb"+ fila + columna, "id", getApplicationContext().getPackageName());
                 ImageButton btn = findViewById(imgid);
+                TextView txt = findViewById(txtid);
                 final AssetManager assetManager = getBaseContext().getAssets();
                 try {
                     btn.setImageBitmap(board.getElement(cont).getImagen(getAssets()));
+                    txt.setText(board.getElement(cont).getTexto());
                     final BoardActivity bA=this;
                     final Element element=board.getElement(cont);
                     btn.setOnClickListener( new View.OnClickListener() {

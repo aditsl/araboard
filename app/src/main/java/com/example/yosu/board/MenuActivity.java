@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -60,7 +61,9 @@ public class MenuActivity extends AppCompatActivity {
         int fila=1;
         for (int x=1; x<=100;x++){
                 int imgid = res.getIdentifier("imageButton"+ fila + columna, "id", getApplicationContext().getPackageName());
+                int txtid=res.getIdentifier("txt"+fila+columna,"id",getApplicationContext().getPackageName());
                 ImageButton btn = findViewById(imgid);
+                TextView txt = findViewById(txtid);
                 final AssetManager assetManager = getBaseContext().getAssets();
                 try {
                     InputStream bitmap;
@@ -72,7 +75,7 @@ public class MenuActivity extends AppCompatActivity {
                     }
                     Bitmap img= BitmapFactory.decodeStream(bitmap);
                     btn.setImageBitmap(img);
-
+                    txt.setText(boardData[x][0]);
                     final int cual=fila;
                     btn.setOnClickListener( new View.OnClickListener() {
                                                 @Override

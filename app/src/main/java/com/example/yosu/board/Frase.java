@@ -1,5 +1,9 @@
 package com.example.yosu.board;
 
+import android.content.res.AssetManager;
+import android.os.Handler;
+import android.os.SystemClock;
+
 /**
  * Created by teo on 11/11/2017.
  */
@@ -11,6 +15,17 @@ public class  Frase extends Board {
 
     public static Frase getInstance(){
         return INSTANCE;
+    }
+
+    public  void play(AssetManager asset){
+        int i=0;
+        super.getElement(i).playAudio(asset);
+        while (i<super.getElementSize()){
+
+            super.getElement(i).playAudio(asset);
+            SystemClock.sleep(1200);
+            i++;
+        }
     }
 
 
