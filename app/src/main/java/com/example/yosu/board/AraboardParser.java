@@ -32,11 +32,11 @@ public class AraboardParser {
            int eventType = xpp.getEventType();
            while (eventType != XmlPullParser.END_DOCUMENT) {
                if(eventType == XmlPullParser.START_DOCUMENT) {
-                   Log.d("Yosu","Start document");
+                   Utils.log("Start document");
                } else if(eventType == XmlPullParser.END_DOCUMENT) {
-                   Log.d("Yosu","End document");
+                   Utils.log("End document");
                } else if(eventType == XmlPullParser.START_TAG) {
-                   Log.d("Yosu","Start tag "+xpp.getName());
+                   Utils.log("Start tag "+xpp.getName());
                    if (xpp.getName().equals("celda")){
                        Element celda=new Element(board.getCarpeta());
                        eventType=xpp.nextTag();
@@ -45,7 +45,7 @@ public class AraboardParser {
                        eventType=xpp.nextTag();
                        eventType=xpp.nextTag();
                        eventType=xpp.nextTag();
-                       eventType=xpp.nextTag();Log.d("Yosu","Imagen:"+ xpp.getAttributeValue(null, "imagen"));
+                       eventType=xpp.nextTag();Utils.log("Imagen:"+ xpp.getAttributeValue(null, "imagen"));
                        celda.setImagen( xpp.getAttributeValue(null, "imagen"));
                        celda.setTexto(xpp.getAttributeValue(null, "texto"));
                        celda.setAudio(xpp.getAttributeValue(null, "audio"));
@@ -58,9 +58,9 @@ public class AraboardParser {
                       board.setColumnas(columnas);
                    }
                } else if(eventType == XmlPullParser.END_TAG) {
-                   Log.d("Yosu","End tag "+xpp.getName());
+                   Utils.log("End tag "+xpp.getName());
                } else if(eventType == XmlPullParser.TEXT) {
-                   Log.d("Yosu","Text "+xpp.getText());
+                   Utils.log("Text "+xpp.getText());
                }
                eventType = xpp.next();
            }
@@ -70,12 +70,12 @@ public class AraboardParser {
             String mLine;
             while ((mLine = reader.readLine()) != null) {
                 //process line
-                Log.d("Yosu",mLine);
+                Utils.log(mLine);
             }
         } catch (IOException e) {
             Log.d("Yosu 36",e.getMessage());
         }catch (XmlPullParserException e){
-            Log.d("Yosu",e.getMessage());
+            Utils.log(e.getMessage());
 
        }
        finally {

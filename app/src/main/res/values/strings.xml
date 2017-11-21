@@ -81,5 +81,6 @@
     <string name="empty_url">Url vacia</string>
     <string name="fill_url">Introduzca una url valida</string>
     <string name="wrong_url">Url incorrecta</string>
+    <string name="action_board_creator">Crear Board</string>
 
 </resources>

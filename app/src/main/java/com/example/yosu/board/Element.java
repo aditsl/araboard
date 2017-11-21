@@ -52,11 +52,9 @@ public class Element {
     public String getTexto() {return this.texto; }
 
     public Bitmap getImagen(AssetManager assetManager) throws  IOException{
-
              InputStream bitmap=assetManager.open(directorio + File.separator +this.imagen);
              Bitmap img= BitmapFactory.decodeStream(bitmap);
              return img;
-
     }
 
     public String getAudio(AssetManager assetManager) throws  IOException{
@@ -72,9 +70,9 @@ public class Element {
           mp.setDataSource(fd);
           mp.prepare();
           mp.start();
-            Log.d("Yosu", "playAudio");
+            Utils.log( "playAudio");
         }catch (Exception e){
-            Log.d("Yosu", "Imposible encontrar el audio "+ruta);
+            Utils.log( "Imposible encontrar el audio "+ruta);
 
         }
 

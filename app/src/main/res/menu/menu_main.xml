@@ -12,4 +12,10 @@
         android:orderInCategory="100"
         android:title="@string/action_download"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_creator"
+        android:orderInCategory="100"
+        android:title="@string/action_board_creator"
+        app:showAsAction="never" />
 </menu>

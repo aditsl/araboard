@@ -53,7 +53,7 @@ public class DownloadActivity extends AppCompatActivity {
 
     public void download() {
         urlpath = txtUrl.getText().toString();
-        Log.d("Yosu", "Descargo " + urlpath);
+        Utils.log( "Descargo " + urlpath);
         if (urlpath.length() == 0) {
             showAlert(getString(R.string.empty_url), getString(R.string.fill_url));
         }
@@ -141,19 +141,13 @@ public class DownloadActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... aurl) {
             try {
-
-
                 URL url = new URL(urlpath.toString()); // Your given URL.
-
                 HttpURLConnection c = (HttpURLConnection) url.openConnection();
                 c.setRequestMethod("GET");
                 c.setDoOutput(true);
                 c.connect(); // Connection Complete here.!
-
-
                 int lenghtOfFile = c.getContentLength();
                 Log.d("Downloading Updates", "Lenght of file: " + lenghtOfFile);
-
                 String PATH = Environment.getExternalStorageDirectory() + "/araboard/";
                 file = new File(PATH);
                 if (!file.exists()) {
@@ -161,11 +155,7 @@ public class DownloadActivity extends AppCompatActivity {
                 }
                 File outputFile = new File(file, app_name);
                 FileOutputStream fos = new FileOutputStream(outputFile);
-
-
-
                 InputStream is = c.getInputStream();
-
                 byte[] buffer = new byte[1024];
                 int len1 = 0;
                 long total = 0;
@@ -181,7 +171,7 @@ public class DownloadActivity extends AppCompatActivity {
                 //Unzip
                 Utils.unzip(outputFile,file);
             } catch (Exception e) {
-                Log.d("Yosu",e.getMessage());
+                Utils.log(e.getMessage());
             }
             return null;
 

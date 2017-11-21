@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 public class Board {
 
-
-
     private List<Element> elements;
     private String carpeta;
     private int filas,columnas;
@@ -33,6 +31,7 @@ public class Board {
         this.filas=filas;
 
     }
+
     public int getFilas(){
         return this.filas;
     }
@@ -41,6 +40,7 @@ public class Board {
 
         return this.columnas;
     }
+
     public void setColumnas(int columnas){
         this.columnas=columnas;
     }
@@ -48,6 +48,8 @@ public class Board {
     public Element getElement(int i){
         return  elements.get(i);
     }
+
+
 
     public int getElementSize(){
         return elements.size();

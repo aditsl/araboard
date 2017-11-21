@@ -21,7 +21,6 @@ public class  Frase extends Board {
         int i=0;
         super.getElement(i).playAudio(asset);
         while (i<super.getElementSize()){
-
             super.getElement(i).playAudio(asset);
             SystemClock.sleep(1200);
             i++;

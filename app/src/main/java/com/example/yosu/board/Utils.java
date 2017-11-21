@@ -1,6 +1,8 @@
 package com.example.yosu.board;
 
 
+import android.util.Log;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,6 +17,8 @@ import java.util.zip.ZipInputStream;
  */
 
 public  class Utils {
+
+    private static final boolean DEBUG=true;
 
     public static boolean checkURL(String url){
         return android.util.Patterns.WEB_URL.matcher(url).matches();
@@ -51,6 +55,13 @@ public  class Utils {
         } finally {
             zis.close();
         }
+    }
+
+    public static void log(String message){
+        if (DEBUG) {
+            Log.d("DEBUG", message);
+        }
+
     }
 
 

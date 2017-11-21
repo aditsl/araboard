@@ -37,15 +37,6 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.layout_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        //
         Frase frase;
         frase=Frase.getInstance();
         AssetManager assetManager = getBaseContext().getAssets();
@@ -68,7 +59,7 @@ public class MenuActivity extends AppCompatActivity {
                 try {
                     InputStream bitmap;
                     if (x<sdStart) {
-                        bitmap = getBaseContext().getAssets().open(boardData[x][0] + File.separator + Araboard.IMGDIR + File.separator + boardData[fila][1]);
+                        bitmap = getBaseContext().getAssets().open(boardData[x][0] + File.separator + Araboard.IMGDIR + File.separator + boardData[x][1]);
                     }else{
                         File bmpfile=new File(Araboard.PATH+boardData[x][0]+File.separator+Araboard.IMGDIR+ File.separator+boardData[x][1]);
                         bitmap = new FileInputStream(bmpfile);
@@ -95,7 +86,7 @@ public class MenuActivity extends AppCompatActivity {
                         fila++;
                     }
                 } catch (Exception e) {
-                    Log.d("Yosu", e.getMessage());
+                    Utils.log( e.getMessage());
                 }
         }
 
@@ -142,7 +133,7 @@ public class MenuActivity extends AppCompatActivity {
                 }
             }
         } catch (Exception e) {
-            Log.d("Yosu", e.getMessage());
+            Utils.log( e.getMessage());
         }
     }
 
@@ -167,6 +158,10 @@ public class MenuActivity extends AppCompatActivity {
         }else if (id == R.id.action_download){
             Intent i=new Intent(getBaseContext(),DownloadActivity.class);
             startActivity(i);
+        }else if ( id == R.id.action_creator){
+            Intent i=new Intent(getBaseContext(),BoardCreatorActivity.class);
+            startActivity(i);
+
         }
         return super.onOptionsItemSelected(item);
     }

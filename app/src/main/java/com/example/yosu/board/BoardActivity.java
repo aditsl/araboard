@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,15 +16,11 @@ import android.view.MenuItem;
 import android.content.res.AssetManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class BoardActivity extends AppCompatActivity {
 
@@ -33,18 +30,7 @@ public class BoardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        setContentView(R.layout.froga1);
         String folderName=getIntent().getStringExtra("BOARD");
         AssetManager assetManager = getBaseContext().getAssets();
         Board matriz=new Board(folderName);
@@ -55,16 +41,35 @@ public class BoardActivity extends AppCompatActivity {
         playbtn.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View view) {
-                                                frase.play(getAssets());
+                                       frase.play(getAssets());
                                        }
                                    }
-
-
         );
+        cargaFrase(frase);
+    }
 
+    private void cargaFrase(Frase frase){
+        int i=0;
+        LinearLayout ll=findViewById(R.id.Frase);
 
+        while (i<frase.getElementSize()){
+            final Element element=frase.getElement(i);
+            try {
+                ImageButton btnNew=new ImageButton(this);
+                btnNew.setImageBitmap(element.getImagen(getAssets()));
+                btnNew.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                btnNew.setAdjustViewBounds(true);
+                LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
+                btnNew.setLayoutParams(layoutParams);
+                ll.addView(btnNew);
+            }catch (Exception e){
+               Utils.log("Board Activity mostrar frase " + e.getMessage());
+            }
+            i++;
+        }
 
     }
+
 
     private void cargaBoard(Board board){
         Resources res=getResources();
@@ -104,7 +109,7 @@ public class BoardActivity extends AppCompatActivity {
                     );
                     cont++;
                 } catch (Exception e) {
-                    Log.d("Yosu", e.getMessage());
+                    Utils.log(e.getMessage());
                 }
             }
         }
