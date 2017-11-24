@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -15,80 +16,77 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-             />
+            android:background="?attr/colorPrimary" />
 
     </android.support.design.widget.AppBarLayout>
 
 
-    <TableLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/TablaPrincipal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="*"
-        android:weightSum="5"
-        >
+        android:weightSum="5">
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4"
-            >
+            android:layout_weight="4">
 
             <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/tableView"
+                android:id="@+id/TablaInterna"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:stretchColumns="*"
-
-                android:weightSum="4" >
+                android:weightSum="4">
 
                 <TableRow
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:weightSum="4" >
+                    android:weightSum="4">
 
                     <ImageButton
                         android:id="@+id/imageButton11"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
                         android:soundEffectsEnabled="false"
                         android:textSize="20sp" />
 
                     <ImageButton
                         android:id="@+id/imageButton12"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
                         android:soundEffectsEnabled="false"
                         android:text="dialer_one"
                         android:textSize="20sp" />
 
                     <ImageButton
                         android:id="@+id/imageButton13"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
                         android:soundEffectsEnabled="false"
                         android:text="dialer_one"
                         android:textSize="20sp" />
+
                     <ImageButton
                         android:id="@+id/imageButton14"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
                         android:soundEffectsEnabled="false"
                         android:text="dialer_one"
                         android:textSize="20sp" />
@@ -97,83 +95,87 @@
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="0"
-                    android:weightSum="4" >
+                    android:weightSum="4">
 
                     <TextView
                         android:id="@+id/txt11"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt12"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt13"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt14"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:weightSum="4" >
+                    android:weightSum="4">
 
 
                     <ImageButton
                         android:id="@+id/imageButton21"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
                         android:soundEffectsEnabled="false"
                         android:text="dialer_one"
                         android:textSize="20sp" />
 
                     <ImageButton
                         android:id="@+id/imageButton22"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
                         android:soundEffectsEnabled="false"
                         android:text="dialer_one"
                         android:textSize="20sp" />
 
                     <ImageButton
                         android:id="@+id/imageButton23"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
                         android:soundEffectsEnabled="false"
                         android:text="dialer_one"
                         android:textSize="20sp" />
 
                     <ImageButton
                         android:id="@+id/imageButton24"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
                         android:soundEffectsEnabled="false"
                         android:text="dialer_one"
                         android:textSize="20sp" />
@@ -181,50 +183,54 @@
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="0"
-                    android:weightSum="4" >
+                    android:weightSum="4">
 
                     <TextView
                         android:id="@+id/txt21"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt22"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt23"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt24"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:weightSum="4" >
+                    android:weightSum="4">
 
                     <ImageButton
                         android:id="@+id/imageButton31"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:soundEffectsEnabled="false"
-                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:soundEffectsEnabled="false"
                         android:text="dialer_star"
                         android:textSize="20sp" />
 
@@ -233,9 +239,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:soundEffectsEnabled="false"
-                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:soundEffectsEnabled="false"
                         android:text="dialer_zero"
                         android:textSize="20sp" />
 
@@ -244,9 +250,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:soundEffectsEnabled="false"
-                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:soundEffectsEnabled="false"
                         android:text="dialer_pound"
                         android:textSize="20sp" />
 
@@ -255,9 +261,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:soundEffectsEnabled="false"
-                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:soundEffectsEnabled="false"
 
                         android:text="dialer_star"
                         android:textSize="20sp" />
@@ -266,50 +272,55 @@
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="0"
-                    android:weightSum="4" >
+
+                    android:weightSum="4">
 
                     <TextView
                         android:id="@+id/txt31"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt32"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt33"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt34"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:weightSum="4" >
+                    android:weightSum="4">
 
                     <ImageButton
                         android:id="@+id/imageButton41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:soundEffectsEnabled="false"
-                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:soundEffectsEnabled="false"
                         android:text="dialer_star"
                         android:textSize="20sp" />
 
@@ -318,9 +329,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:soundEffectsEnabled="false"
-                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:soundEffectsEnabled="false"
                         android:text="dialer_zero"
                         android:textSize="20sp" />
 
@@ -329,9 +340,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:soundEffectsEnabled="false"
-                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:soundEffectsEnabled="false"
                         android:text="dialer_pound"
                         android:textSize="20sp" />
 
@@ -340,9 +351,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:soundEffectsEnabled="false"
-                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:soundEffectsEnabled="false"
                         android:text="dialer_star"
                         android:textSize="20sp" />
 
@@ -350,34 +361,38 @@
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="0"
-                    android:weightSum="4" >
+                    android:weightSum="4">
 
                     <TextView
                         android:id="@+id/txt41"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt42"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt43"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
 
                     <TextView
                         android:id="@+id/txt44"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
                 </TableRow>
 
 
@@ -385,19 +400,20 @@
         </TableRow>
 
         <TableRow
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
             android:layout_weight="1"
+            app:srcCompat="@drawable/ic_launcher_background"
 
             >
+
             <ImageButton
                 android:id="@+id/imageButton01"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:soundEffectsEnabled="false"
-                android:layout_gravity="center_vertical"
                 android:text="dialer_star"
                 android:textSize="20sp" />
 

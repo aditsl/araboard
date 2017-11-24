@@ -5,6 +5,7 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
@@ -13,9 +14,11 @@ import android.support.v4.media.session.IMediaControllerCallback;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.io.File;
@@ -37,6 +40,12 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.layout_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        /*TableLayout table = (TableLayout) findViewById(R.id.TablaInterna);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        TableLayout.LayoutParams width = new TableLayout.LayoutParams(size.x,size.y);
+        table.setLayoutParams(width);*/
         Frase frase;
         frase=Frase.getInstance();
         AssetManager assetManager = getBaseContext().getAssets();

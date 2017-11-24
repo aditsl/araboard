@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/LayoutBoardCreator"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
 
@@ -19,9 +19,16 @@
 
             <ImageButton
                 android:id="@+id/BCimg11"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/ic_input_add2" />
+
+            <ImageButton
+                android:id="@+id/BCimgr11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" android:contentDescription="TODO"/>
+                android:layout_toRightOf="@id/BCimg11"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_btn_speak_now" />
 
             <EditText
                 android:id="@+id/BCtxt11"
@@ -32,8 +39,7 @@
                 android:layout_below="@+id/BCimg11"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:singleLine="true"
-                android:text="Name" />
+                android:singleLine="true" />
 
         </RelativeLayout>
 
@@ -56,8 +62,7 @@
                 android:layout_below="@+id/BCimg12"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:singleLine="true"
-                android:text="Name" />
+                android:singleLine="true" />
 
         </RelativeLayout>
 
@@ -81,8 +86,7 @@
                 android:layout_below="@+id/BCimg13"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:singleLine="true"
-                android:text="Name" />
+                android:singleLine="true" />
 
         </RelativeLayout>
 
@@ -105,8 +109,7 @@
                 android:layout_below="@+id/BCimg14"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:singleLine="true"
-                android:text="Name" />
+                android:singleLine="true" />
 
         </RelativeLayout>
 
@@ -115,8 +118,8 @@
 
     <LinearLayout
         android:id="@+id/LayoutBC2"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
 
@@ -139,8 +142,7 @@
                 android:layout_below="@+id/BCimg21"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:singleLine="true"
-                android:text="Name" />
+                android:singleLine="true" />
 
         </RelativeLayout>
 
@@ -163,13 +165,259 @@
                 android:layout_below="@+id/BCimg22"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:singleLine="true"
-                android:text="Name" />
+                android:singleLine="true" />
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg23"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg24"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayoutBC3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg31"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg32"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg33"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg34"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </RelativeLayout>
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayoutBC4"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg41"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg42"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg43"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/BCimg44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+            <EditText
+                android:id="@+id/BCtxt44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BCimg44"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
