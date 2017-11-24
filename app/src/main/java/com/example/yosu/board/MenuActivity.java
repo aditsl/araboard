@@ -1,5 +1,6 @@
 package com.example.yosu.board;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
@@ -40,12 +41,6 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.layout_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*TableLayout table = (TableLayout) findViewById(R.id.TablaInterna);
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        TableLayout.LayoutParams width = new TableLayout.LayoutParams(size.x,size.y);
-        table.setLayoutParams(width);*/
         Frase frase;
         frase=Frase.getInstance();
         AssetManager assetManager = getBaseContext().getAssets();
@@ -59,7 +54,7 @@ public class MenuActivity extends AppCompatActivity {
         int cont=0;
         int columna=1;
         int fila=1;
-        for (int x=1; x<=100;x++){
+        for (int x=1; x<=boardData.length;x++){
                 int imgid = res.getIdentifier("imageButton"+ fila + columna, "id", getApplicationContext().getPackageName());
                 int txtid=res.getIdentifier("txt"+fila+columna,"id",getApplicationContext().getPackageName());
                 ImageButton btn = findViewById(imgid);
@@ -76,7 +71,7 @@ public class MenuActivity extends AppCompatActivity {
                     Bitmap img= BitmapFactory.decodeStream(bitmap);
                     btn.setImageBitmap(img);
                     txt.setText(boardData[x][0]);
-                    final int cual=fila;
+                    final int cual=x;
                     btn.setOnClickListener( new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v){
@@ -146,6 +141,9 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Utils.log("Codigo="+requestCode);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {

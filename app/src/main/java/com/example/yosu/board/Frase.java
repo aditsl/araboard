@@ -19,13 +19,14 @@ public class  Frase extends Board {
 
     public  void play(AssetManager asset){
         int i=0;
-        super.getElement(i).playAudio(asset);
         while (i<super.getElementSize()){
             super.getElement(i).playAudio(asset);
             SystemClock.sleep(1200);
             i++;
         }
     }
+
+
 
 
 }

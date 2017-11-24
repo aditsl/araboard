@@ -378,9 +378,22 @@
         android:weightSum="1"
         >
 
-        <HorizontalScrollView
+        <LinearLayout
+            android:id="@+id/FraseContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            >
+
+            <ImageButton
+                android:id="@+id/playButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_media_play" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:weightSum="1"
             >
@@ -395,15 +408,17 @@
                 android:layout_weight="1"
                 >
 
-                <ImageButton
-                    android:id="@+id/playButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@android:drawable/ic_media_play" />
 
             </LinearLayout>
 
         </HorizontalScrollView>
+
+            <ImageButton
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_delete" />
+        </LinearLayout>
 
 
     </TableRow>

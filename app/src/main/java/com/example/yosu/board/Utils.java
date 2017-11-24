@@ -64,5 +64,13 @@ public  class Utils {
 
     }
 
+    public static boolean fileExist(String path){
+        File file=new File(path);
+        if (file.exists())
+            return true;
+        else
+            return false;
+    }
+
 
 }

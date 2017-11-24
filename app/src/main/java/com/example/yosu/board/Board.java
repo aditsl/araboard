@@ -12,6 +12,7 @@ public class Board {
     private List<Element> elements;
     private String carpeta;
     private int filas,columnas;
+    private boolean isAssets=true;
 
     Board(String carpeta){
         elements = new ArrayList<Element>();
@@ -57,6 +58,21 @@ public class Board {
 
     public String getCarpeta(){
         return this.carpeta;
+    }
+
+    public void delLastElement(){
+        if (elements.size()>0) {
+            this.elements.remove(elements.size() - 1);
+        }
+
+    }
+
+    public void setIsAssets(Boolean bol){
+        this.isAssets=bol;
+    }
+
+    public boolean getIsAssets(){
+        return this.isAssets;
     }
 
 

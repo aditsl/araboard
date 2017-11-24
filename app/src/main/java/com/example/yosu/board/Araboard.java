@@ -13,6 +13,7 @@ public class Araboard {
     public static final String IMGDIR="IMAGENES";
     public static final String PATH = Environment.getExternalStorageDirectory() + "/araboard/";
     public static final String TMPBOARDPATH = PATH + "tmpboar/";
+    public static final String TABLERO="tablero_comunicacion.xml";
 
 
 

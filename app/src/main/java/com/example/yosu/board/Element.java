@@ -11,6 +11,7 @@ import android.util.Log;
 
 import java.io.File;
 import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -26,6 +27,7 @@ public class Element {
     private String audio;
     private String texto;
     private String directorio;
+    private boolean isAssets;
 
     public void setFila(int fila){
         this.fila=fila;
@@ -52,8 +54,15 @@ public class Element {
     public String getTexto() {return this.texto; }
 
     public Bitmap getImagen(AssetManager assetManager) throws  IOException{
-             InputStream bitmap=assetManager.open(directorio + File.separator +this.imagen);
-             Bitmap img= BitmapFactory.decodeStream(bitmap);
+            Bitmap img;
+             if (isAssets) {
+                 InputStream bitmap = assetManager.open(directorio + File.separator + this.imagen);
+                 img = BitmapFactory.decodeStream(bitmap);
+             }else{
+                 File bmpfile=new File(Araboard.PATH+directorio+File.separator+ File.separator+imagen);
+                 FileInputStream bitmap = new FileInputStream(bmpfile);
+                 img= BitmapFactory.decodeStream(bitmap);
+             }
              return img;
     }
 
@@ -77,5 +86,9 @@ public class Element {
         }
 
 
+    }
+
+    public void setIsAssets(Boolean bol){
+        this.isAssets=bol;
     }
 }

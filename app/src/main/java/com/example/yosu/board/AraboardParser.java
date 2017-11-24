@@ -2,7 +2,9 @@ package com.example.yosu.board;
 import android.util.Log;
 import  	java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import android.content.res.AssetManager;
 
@@ -20,10 +22,10 @@ public class AraboardParser {
     private  AssetManager assetManager;
 
 
-    public  AraboardParser(  AssetManager assetManager, Board board ){
+    public  AraboardParser(InputStreamReader file, Board board ){
        BufferedReader reader = null;
        try {
-           reader = new BufferedReader(new InputStreamReader(assetManager.open( board.getCarpeta() + File.separator + "tablero_comunicacion.xml"),"ISO-8859-1"));
+           reader = new BufferedReader(file);
             //Initialize de parser
            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
            factory.setNamespaceAware(true);
@@ -39,6 +41,7 @@ public class AraboardParser {
                    Utils.log("Start tag "+xpp.getName());
                    if (xpp.getName().equals("celda")){
                        Element celda=new Element(board.getCarpeta());
+                       celda.setIsAssets(board.getIsAssets());
                        eventType=xpp.nextTag();
                        celda.setFila(Integer.parseInt(xpp.getAttributeValue(null, "fila")));
                        celda.setColumna(Integer.parseInt(xpp.getAttributeValue(null, "columna")));

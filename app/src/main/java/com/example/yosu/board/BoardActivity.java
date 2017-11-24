@@ -1,25 +1,21 @@
 package com.example.yosu.board;
 
-import android.app.ActionBar;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.res.AssetManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 
 public class BoardActivity extends AppCompatActivity {
@@ -29,13 +25,29 @@ public class BoardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        InputStreamReader tablero;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.froga1);
+        setContentView(R.layout.board);
         String folderName=getIntent().getStringExtra("BOARD");
         AssetManager assetManager = getBaseContext().getAssets();
         Board matriz=new Board(folderName);
         frase=Frase.getInstance();
-        AraboardParser parser=new AraboardParser(assetManager, matriz);
+        tablero=null;
+        //We have to see if the board has ben downloaded or is an asset
+        try {
+            if (Utils.fileExist(Araboard.PATH + folderName + File.separator + Araboard.TABLERO)) {
+                FileInputStream tablerof = new FileInputStream(Araboard.PATH + folderName + File.separator + Araboard.TABLERO);
+                tablero = new InputStreamReader(tablerof);
+                matriz.setIsAssets(false);
+            } else {
+                tablero = new InputStreamReader(assetManager.open(folderName + File.separator + "tablero_comunicacion.xml"), "ISO-8859-1");
+                matriz.setIsAssets(true);
+            }
+        }catch(Exception e)
+        {
+
+        }
+        AraboardParser parser=new AraboardParser(tablero, matriz);
         cargaBoard(matriz);
         ImageButton  playbtn = (ImageButton) findViewById(R.id.playButton);
         playbtn.setOnClickListener(new View.OnClickListener() {
@@ -45,13 +57,22 @@ public class BoardActivity extends AppCompatActivity {
                                        }
                                    }
         );
+        ImageButton delbtn=(ImageButton) findViewById(R.id.deleteButton);
+        delbtn.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            frase.delLastElement();
+                                            cargaFrase(frase);
+                                        }
+            }
+        );
         cargaFrase(frase);
     }
 
     private void cargaFrase(Frase frase){
         int i=0;
         LinearLayout ll=findViewById(R.id.Frase);
-
+        ll.removeAllViews();
         while (i<frase.getElementSize()){
             final Element element=frase.getElement(i);
             try {
