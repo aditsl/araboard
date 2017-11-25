@@ -1,423 +1,455 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/LayoutBoardCreator"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
-    <LinearLayout
-        android:id="@+id/LayoutBC1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg11"
-                android:contentDescription="TODO"
-                app:srcCompat="@drawable/ic_input_add2" />
-
-            <ImageButton
-                android:id="@+id/BCimgr11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/BCimg11"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_btn_speak_now" />
-
-            <EditText
-                android:id="@+id/BCtxt11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg11"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg12"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/BCimg13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg13"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/BCimg14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg14"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/LayoutBC2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg21"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg22"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg23"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg24"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/LayoutBC3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg31"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg32"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg33"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg34"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/LayoutBC4"
-        android:layout_width="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TablaPrincipal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:stretchColumns="*"
+    android:weightSum="5"
+    >
+    <TableRow
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_weight="5"
 
-        <RelativeLayout
+        >
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/tableView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:weightSum="4" >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:weightSum="4" >
+
+                <ImageButton
+                    android:id="@+id/BCimg11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2" />
+
+                <ImageButton
+                    android:id="@+id/BCimg12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:soundEffectsEnabled="false"
+                    android:text="dialer_one"
+                    android:src="@drawable/ic_input_add2"
+                     />
+
+                <ImageButton
+                    android:id="@+id/BCimg13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"
+                    />
+                <ImageButton
+                    android:id="@+id/BCimg14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"
+                    />
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0"
+                android:weightSum="8" >
+
+
+                <EditText
+                    android:id="@+id/txtb11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="" />
+
+                <EditText
+                    android:id="@+id/txtb12"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb13"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb14"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:weightSum="4" >
+
+
+                <ImageButton
+                    android:id="@+id/BCimg21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/BCimg22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/BCimg23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/BCimg24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0"
+                android:weightSum="4" >
+
+                <EditText
+                    android:id="@+id/txtb21"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb22"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb23"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb24"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:weightSum="4" >
+
+                <ImageButton
+                    android:id="@+id/BCimg31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"  />
+
+                <ImageButton
+                    android:id="@+id/BCimg32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"  />
+
+                <ImageButton
+                    android:id="@+id/BCimg33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2" />
+
+                <ImageButton
+                    android:id="@+id/BCimg34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0"
+                android:weightSum="4" >
+
+                <EditText
+                    android:id="@+id/txtb131"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb32"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb33"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb34"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:weightSum="4" >
+
+                <ImageButton
+                    android:id="@+id/BCimg41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2" />
+
+                <ImageButton
+                    android:id="@+id/BCimg42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"  />
+
+                <ImageButton
+                    android:id="@+id/BCimg43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2" />
+
+                <ImageButton
+                    android:id="@+id/BCimg44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Capture Picture"
+                    android:scaleType="fitCenter"
+                    android:soundEffectsEnabled="false"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_input_add2"  />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0"
+                android:weightSum="4" >
+
+                <EditText
+                    android:id="@+id/txtb41"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb42"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb43"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/txtb44"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+        </TableLayout>
+    </TableRow>
+    <TableRow
+
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:weightSum="1"
+        >
+
+        <LinearLayout
+            android:id="@+id/FraseContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            >
 
             <ImageButton
-                android:id="@+id/BCimg41"
+                android:id="@+id/playButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@android:drawable/ic_media_play"
+                android:src="@drawable/ic_input_add2"/>
 
-            <EditText
-                android:id="@+id/BCtxt41"
+            <HorizontalScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg41"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-        </RelativeLayout>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="1"
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                >
+
+                <LinearLayout
+                    android:id="@+id/Frase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_weight="1"
+                    >
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
 
             <ImageButton
-                android:id="@+id/BCimg42"
+                android:id="@+id/deleteButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt42"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg42"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg43"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt43"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg43"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/BCimg44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-            <EditText
-                android:id="@+id/BCtxt44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/BCimg44"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
-        </RelativeLayout>
+                app:srcCompat="@android:drawable/ic_delete" />
+        </LinearLayout>
 
 
-    </LinearLayout>
+    </TableRow>
 
 
-</LinearLayout>
+</TableLayout>

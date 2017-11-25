@@ -1,4 +1,4 @@
-package com.example.yosu.board;
+package es.puntoweb.board;
 
 import java.util.List;
 import java.util.ArrayList;

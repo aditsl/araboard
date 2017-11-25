@@ -1,16 +1,12 @@
 
-package com.example.yosu.board;
+package es.puntoweb.board;
 
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
-import android.util.Log;
-
 import java.io.File;
-import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -59,7 +55,7 @@ public class Element {
                  InputStream bitmap = assetManager.open(directorio + File.separator + this.imagen);
                  img = BitmapFactory.decodeStream(bitmap);
              }else{
-                 File bmpfile=new File(Araboard.PATH+directorio+File.separator+ File.separator+imagen);
+                 File bmpfile=new File(Araboard.PATH+directorio+File.separator+imagen);
                  FileInputStream bitmap = new FileInputStream(bmpfile);
                  img= BitmapFactory.decodeStream(bitmap);
              }
@@ -71,12 +67,18 @@ public class Element {
     }
 
     public  void playAudio(AssetManager assetManager) {
-        String ruta=directorio + File.separator +this.audio;
+        String ruta="";
+        MediaPlayer mp=new MediaPlayer();
         try{
+            if (isAssets) {
+                ruta = directorio + File.separator + this.audio;
+                AssetFileDescriptor fd=assetManager.openFd(ruta);
+                mp.setDataSource(fd.getFileDescriptor(),fd.getStartOffset(),fd.getLength());
+            }else{
+                ruta=Araboard.PATH+directorio+ File.separator+audio;
+                mp.setDataSource(ruta);
+            }
 
-          AssetFileDescriptor fd=assetManager.openFd(ruta);
-          MediaPlayer mp=new MediaPlayer();
-          mp.setDataSource(fd);
           mp.prepare();
           mp.start();
             Utils.log( "playAudio");

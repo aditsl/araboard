@@ -1,7 +1,6 @@
-package com.example.yosu.board;
+package es.puntoweb.board;
 
 import android.content.res.AssetManager;
-import android.os.Handler;
 import android.os.SystemClock;
 
 /**

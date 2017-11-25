@@ -1,4 +1,4 @@
-package com.example.yosu.board;
+package es.puntoweb.board;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -12,9 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
+
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 
 
@@ -40,7 +41,7 @@ public class BoardActivity extends AppCompatActivity {
                 tablero = new InputStreamReader(tablerof);
                 matriz.setIsAssets(false);
             } else {
-                tablero = new InputStreamReader(assetManager.open(folderName + File.separator + "tablero_comunicacion.xml"), "ISO-8859-1");
+                tablero = new InputStreamReader(assetManager.open(folderName + File.separator + Araboard.TABLERO), "ISO-8859-1");
                 matriz.setIsAssets(true);
             }
         }catch(Exception e)
@@ -48,7 +49,7 @@ public class BoardActivity extends AppCompatActivity {
 
         }
         AraboardParser parser=new AraboardParser(tablero, matriz);
-        cargaBoard(matriz);
+        loadBoard(matriz);
         ImageButton  playbtn = (ImageButton) findViewById(R.id.playButton);
         playbtn.setOnClickListener(new View.OnClickListener() {
                                        @Override
@@ -62,14 +63,14 @@ public class BoardActivity extends AppCompatActivity {
                                         @Override
                                         public void onClick(View view) {
                                             frase.delLastElement();
-                                            cargaFrase(frase);
+                                            loadPhrase(frase);
                                         }
             }
         );
-        cargaFrase(frase);
+        loadPhrase(frase);
     }
 
-    private void cargaFrase(Frase frase){
+    private void loadPhrase(Frase frase){
         int i=0;
         LinearLayout ll=findViewById(R.id.Frase);
         ll.removeAllViews();
@@ -84,7 +85,7 @@ public class BoardActivity extends AppCompatActivity {
                 btnNew.setLayoutParams(layoutParams);
                 ll.addView(btnNew);
             }catch (Exception e){
-               Utils.log("Board Activity mostrar frase " + e.getMessage());
+               Utils.log(" ERROR Board showing phrase " + e.getMessage());
             }
             i++;
         }
@@ -92,7 +93,7 @@ public class BoardActivity extends AppCompatActivity {
     }
 
 
-    private void cargaBoard(Board board){
+    private void loadBoard(Board board){
         Resources res=getResources();
         int cont=0;
         for (int fila=1; fila<=4;fila++){
@@ -103,8 +104,11 @@ public class BoardActivity extends AppCompatActivity {
                 TextView txt = findViewById(txtid);
                 final AssetManager assetManager = getBaseContext().getAssets();
                 try {
-                    btn.setImageBitmap(board.getElement(cont).getImagen(getAssets()));
-                    txt.setText(board.getElement(cont).getTexto());
+                    //Some Araboard tableros has empty cells!
+                    if (board.getElement(cont).getTexto()!=null) {
+                        btn.setImageBitmap(board.getElement(cont).getImagen(getAssets()));
+                        txt.setText(board.getElement(cont).getTexto());
+                    }
                     final BoardActivity bA=this;
                     final Element element=board.getElement(cont);
                     btn.setOnClickListener( new View.OnClickListener() {

@@ -1,10 +1,6 @@
-package com.example.yosu.board;
-import android.util.Log;
-import  	java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
+package es.puntoweb.board;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import android.content.res.AssetManager;
 
@@ -48,11 +44,12 @@ public class AraboardParser {
                        eventType=xpp.nextTag();
                        eventType=xpp.nextTag();
                        eventType=xpp.nextTag();
-                       eventType=xpp.nextTag();Utils.log("Imagen:"+ xpp.getAttributeValue(null, "imagen"));
-                       celda.setImagen( xpp.getAttributeValue(null, "imagen"));
+                       eventType=xpp.nextTag();
+                       celda.setImagen(xpp.getAttributeValue(null, "imagen"));
                        celda.setTexto(xpp.getAttributeValue(null, "texto"));
                        celda.setAudio(xpp.getAttributeValue(null, "audio"));
                        board.addElement(celda);
+
                    }else if (xpp.getName().equals("componentes")){
 
                       int filas=Integer.parseInt(xpp.getAttributeValue(null, "filas"));
@@ -76,7 +73,7 @@ public class AraboardParser {
                 Utils.log(mLine);
             }
         } catch (IOException e) {
-            Log.d("Yosu 36",e.getMessage());
+           Utils.log(e.getMessage());
         }catch (XmlPullParserException e){
             Utils.log(e.getMessage());
 

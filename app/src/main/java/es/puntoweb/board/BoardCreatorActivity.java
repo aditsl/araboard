@@ -1,18 +1,13 @@
-package com.example.yosu.board;
+package es.puntoweb.board;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.MediaRecorder;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.ImageButton;
 
-import java.io.File;
-import java.io.IOException;
 
 public class BoardCreatorActivity extends Activity {
 
@@ -43,7 +38,7 @@ public class BoardCreatorActivity extends Activity {
                 );
             }
         }
-        recbtn=(ImageButton) findViewById(R.id.BCimgr11);
+        /*recbtn=(ImageButton) findViewById(R.id.BCimgr11);
         recbtn.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
@@ -58,7 +53,7 @@ public class BoardCreatorActivity extends Activity {
 
                                        }
                                    }
-        );
+        );*/
 
 
     }

@@ -1,4 +1,4 @@
-package com.example.yosu.board;
+package es.puntoweb.board;
 
 
 import android.util.Log;
@@ -59,7 +59,9 @@ public  class Utils {
 
     public static void log(String message){
         if (DEBUG) {
-            Log.d("DEBUG", message);
+            if (message!=null) {
+                Log.d("DEBUG", message);
+            }
         }
 
     }
