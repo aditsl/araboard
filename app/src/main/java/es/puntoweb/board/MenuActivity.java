@@ -67,7 +67,7 @@ public class MenuActivity extends AppCompatActivity {
                                                 public void onClick(View v){
                                                     Intent i=new Intent(getBaseContext(),BoardActivity.class);
                                                     i.putExtra("BOARD",boardData[cual][0]);
-                                                    startActivity(i);
+                                                    startActivityForResult(i,1);
                                                 }
                                             }
                     );
@@ -132,8 +132,13 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Utils.log("Codigo="+requestCode);
+        if (requestCode==2){
+            listBoards(getBaseContext().getAssets());
+            cargaMenu();
+        }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
@@ -154,10 +159,10 @@ public class MenuActivity extends AppCompatActivity {
             return true;
         }else if (id == R.id.action_download){
             Intent i=new Intent(getBaseContext(),DownloadActivity.class);
-            startActivity(i);
+            startActivityForResult(i,2);
         }else if ( id == R.id.action_creator){
             Intent i=new Intent(getBaseContext(),BoardCreatorActivity.class);
-            startActivity(i);
+            startActivityForResult(i,3);
 
         }
         return super.onOptionsItemSelected(item);

@@ -39,19 +39,17 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2" />
+                    android:src="@android:drawable/ic_input_add" />
 
                 <ImageButton
                     android:id="@+id/BCimg12"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
-                    android:scaleType="fitXY"
+                    android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
-                    android:text="dialer_one"
-                    android:src="@drawable/ic_input_add2"
-                     />
+                    android:src="@android:drawable/ic_input_add"
+                    android:text="dialer_one" />
 
                 <ImageButton
                     android:id="@+id/BCimg13"
@@ -63,58 +61,90 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"
+                    android:src="@android:drawable/ic_input_add"
                     />
+
                 <ImageButton
                     android:id="@+id/BCimg14"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
                     android:contentDescription="Capture Picture"
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
-                    android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"
-                    />
+                    android:src="@android:drawable/ic_input_add"
+                    android:visibility="visible" />
 
 
             </TableRow>
+
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="0"
-                android:weightSum="8" >
+                android:weightSum="16">
 
 
                 <EditText
                     android:id="@+id/txtb11"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                 />
+
+                <ImageButton
+                    android:id="@+id/BCimgr11"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="" />
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb12"
                     android:layout_width="wrap_content"
-                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center" />
+
+                <ImageButton
+                    android:id="@+id/BCimgr12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb13"
                     android:layout_width="wrap_content"
-                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center" />
+
+                <ImageButton
+                    android:id="@+id/BCimgr13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb14"
                     android:layout_width="wrap_content"
-                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center" />
+
+                <ImageButton
+                    android:id="@+id/BCimgr14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
             </TableRow>
             <TableRow
                 android:layout_width="fill_parent"
@@ -132,10 +162,11 @@
                     android:contentDescription="Capture Picture"
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
+                    android:src="@android:drawable/ic_input_add"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"
 
                     />
+
 
                 <ImageButton
                     android:id="@+id/BCimg22"
@@ -147,7 +178,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"
+                    android:src="@android:drawable/ic_input_add"
 
                     />
 
@@ -161,7 +192,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"
+                    android:src="@android:drawable/ic_input_add"
 
                     />
 
@@ -175,42 +206,80 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2" />
+                    android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="0"
-                android:weightSum="4" >
+                android:weightSum="16" >
 
                 <EditText
                     android:id="@+id/txtb21"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
+
 
                 <EditText
                     android:id="@+id/txtb22"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb23"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+                <ImageButton
+                    android:id="@+id/BCimgr23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb24"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
             </TableRow>
             <TableRow
                 android:layout_width="fill_parent"
@@ -228,7 +297,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"  />
+                    android:src="@android:drawable/ic_input_add"  />
 
                 <ImageButton
                     android:id="@+id/BCimg32"
@@ -240,7 +309,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"  />
+                    android:src="@android:drawable/ic_input_add"  />
 
                 <ImageButton
                     android:id="@+id/BCimg33"
@@ -252,7 +321,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2" />
+                    android:src="@android:drawable/ic_input_add" />
 
                 <ImageButton
                     android:id="@+id/BCimg34"
@@ -264,7 +333,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2" />
+                    android:src="@android:drawable/ic_input_add" />
 
 
             </TableRow>
@@ -273,35 +342,71 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="0"
-                android:weightSum="4" >
+                android:weightSum="16" >
 
                 <EditText
-                    android:id="@+id/txtb131"
+                    android:id="@+id/txtb31"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb32"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr32"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb33"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr33"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb34"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr34"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
             </TableRow>
 
             <TableRow
@@ -320,7 +425,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2" />
+                    android:src="@android:drawable/ic_input_add" />
 
                 <ImageButton
                     android:id="@+id/BCimg42"
@@ -332,7 +437,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"  />
+                    android:src="@android:drawable/ic_input_add"  />
 
                 <ImageButton
                     android:id="@+id/BCimg43"
@@ -344,7 +449,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2" />
+                    android:src="@android:drawable/ic_input_add" />
 
                 <ImageButton
                     android:id="@+id/BCimg44"
@@ -356,7 +461,7 @@
                     android:scaleType="fitCenter"
                     android:soundEffectsEnabled="false"
                     android:visibility="visible"
-                    android:src="@drawable/ic_input_add2"  />
+                    android:src="@android:drawable/ic_input_add"  />
 
 
             </TableRow>
@@ -365,35 +470,71 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="0"
-                android:weightSum="4" >
+                android:weightSum="16" >
 
                 <EditText
                     android:id="@+id/txtb41"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr41"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb42"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr42"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb43"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr43"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
 
                 <EditText
                     android:id="@+id/txtb44"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/BCimgr44"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/presence_audio_away" />
             </TableRow>
         </TableLayout>
     </TableRow>
@@ -416,7 +557,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/ic_media_play"
-                android:src="@drawable/ic_input_add2"/>
+                android:src="@android:drawable/ic_input_add"/>
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"

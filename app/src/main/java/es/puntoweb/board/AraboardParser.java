@@ -89,4 +89,24 @@ public class AraboardParser {
         }
     }
 
+    public static String parseBoard(Board board){
+        String xml;
+        xml="<xml version=\"1.0\" encoding=\"ISO-8859-1\">\n" +
+                "  <cabecera>\n" +
+                "    <fondo color=\"16187287\"/>\n" +
+                "    <letra color=\"65793\"/>\n" +
+                "    <nombre titulo=\" "+board.getCarpeta() +". ARABOARD\"/>\n" +
+                "    <componentes filas=\"4\" columnas=\"7\"/>\n" +
+                "  </cabecera>";
+        int i=0;
+        while (i<board.getElementSize()){
+            xml+="<celda>\n" +
+                    "    <coordenadas fila=\"1\" columna=\"1\"/>\n" +
+                    "    <ocupada flag=\"true\"/>\n" +
+                    "    <pictograma imagen=\"IMAGENES/23392.png\" audio=\"AUDIOS/0/14.mp3\" texto=\"JUGAR\" categoria=\"3\" color=\"3381504\"/>\n" +
+                    "  </celda>";
+            i++;
+        }
+        return xml;
+   }
 }

@@ -33,6 +33,10 @@ public class Element {
         this.directorio=directorio;
     }
 
+    public Element(){
+        //Empty element for BoardCreator
+    }
+
     public void setColumna(int columna){
         this.columna=columna;
     }

@@ -1,5 +1,7 @@
 package es.puntoweb.board;
 
+import android.view.View;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -21,6 +23,15 @@ public class Board {
 
     Board(){
         elements = new ArrayList<Element>();
+    }
+
+    public void initializeElements(){
+        int i=0;
+        while (i<16){
+            Element elemento=new Element();
+            this.addElement(elemento);
+            i++;
+        }
     }
 
     public void addElement(Element e){
@@ -75,5 +86,10 @@ public class Board {
         return this.isAssets;
     }
 
-
+    public static  int getSelectedElement(View v){
+        String ID = v.getResources().getResourceName(v.getId());
+        int selectedfile=  Integer.parseInt(ID.substring(ID.length()-2,ID.length()-1));
+        int selectedcolumn=Integer.parseInt(ID.substring(ID.length()-1,ID.length()));
+        return 4*(selectedfile-1)+selectedcolumn;
+    }
 }
