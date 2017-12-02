@@ -107,6 +107,17 @@ public class AraboardParser {
                     "  </celda>";
             i++;
         }
+        xml+="</xml>";
         return xml;
    }
+
+    public static void initializeDirectory(){
+        Utils.makeDirIfNotExist(Araboard.PATH);
+        Utils.makeDirIfNotExist(Araboard.TMPBOARDPATH);
+        Utils.deleteDirRecursive(Araboard.TMPBOARDPATH);
+        Utils.makeDirIfNotExist(Araboard.TMPBOARDPATH+Araboard.IMGDIRNAME);
+        Utils.makeDirIfNotExist(Araboard.TMPBOARDPATH+Araboard.AUDIODIRNAME);
+    }
+
+
 }

@@ -1,6 +1,9 @@
 package es.puntoweb.board;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 
 import java.io.File;
 
@@ -10,18 +13,15 @@ import java.io.File;
 
 public class Araboard {
 
-    public static final String IMGDIR="IMAGENES";
+    public static final String IMGDIRNAME ="IMAGENES";
+    public static final String AUDIODIRNAME ="AUDIOS";
     public static final String PATH = Environment.getExternalStorageDirectory() + "/araboard/";
     public static final String TMPBOARDPATH = PATH + "tmpboar/";
     public static final String TABLERO="tablero_comunicacion.xml";
 
-
-
     private static Araboard INSTANCE=new Araboard();
 
-
     private Araboard(){}
-
 
 
     public static Araboard getInstance(){
@@ -43,5 +43,39 @@ public class Araboard {
         return outputFile;
     }
 
+    public static String getImgPath(String directory){
+        return PATH+directory+File.separator+IMGDIRNAME+File.separator;
+    }
+
+    public static int getMenuRows(Context context){
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(context);
+        return Integer.parseInt(SP.getString("menu_rows","0"));
+
+    }
+
+    public static int getMenuColums(Context context){
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(context);
+        return Integer.parseInt(SP.getString("menu_columns","0"));
+    }
+
+
+    public static int getBoardRows(Context context){
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(context);
+        return Integer.parseInt(SP.getString("board_rows","0"));
+    }
+
+    public static int getBoardColums(Context context){
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(context);
+        return Integer.parseInt(SP.getString("board_columns","0"));
+    }
+
+    public static boolean getBoardOverride(Context context){
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(context);
+        return SP.getBoolean ("board_override",false);
+    }
+
+    public static String getAudioPath(String directory){
+        return PATH+directory+File.separator+AUDIODIRNAME+File.separator;
+    }
 
 }

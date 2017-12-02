@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Board</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!-- Araboard Strings -->
+    <string name="action_download">Jeitsi</string>
+    <string name="empty_url">Url hutsa</string>
+    <string name="fill_url">Sar esazu URL egoki bat</string>
+    <string name="wrong_url">Url akastuna</string>
+    <string name="action_board_creator">Board berria sortu</string>
+
+
+    <!-- Araboard Preferences -->
+    <string name="pref_sms_storage_title">Hasierako orria</string>
+
+</resources>

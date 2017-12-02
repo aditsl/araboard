@@ -25,6 +25,8 @@ public class BoardCreatorActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_board_creator);
+        //Fill tmpboard directory whit subdirs
+        AraboardParser.initializeDirectory();
         board.initializeElements();
 
         //Creating listeners for al Images,recordbuttons and Edittexts

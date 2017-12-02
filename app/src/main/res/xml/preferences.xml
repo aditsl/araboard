@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_initial_page"
+        android:key="pref_key_menu_settings">
+
+        <EditTextPreference android:title="@string/pref_inital_page_rows"
+            android:key="menu_rows"
+            android:summary="@string/pref_inital_page_rows_summary"
+            android:numeric="integer"
+            android:maxLength="1"></EditTextPreference>
+
+        <EditTextPreference android:title="@string/pref_inital_page_columns"
+            android:key="menu_columns"
+            android:summary="@string/pref_inital_page_columns_summary"
+            android:numeric="integer"
+            android:maxLength="1"></EditTextPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_board"
+        android:key="pref_board_settings">
+
+        <CheckBoxPreference android:title="@string/pref_board_override"
+            android:defaultValue="false"
+            android:summary="@string/pref_board_override_summary"
+            android:key="board_override"/>
+
+        <EditTextPreference android:title="@string/pref_board_rows"
+            android:key="board_rows"
+            android:summary="@string/pref_board_rows_summary"
+            android:numeric="integer"
+            android:maxLength="1"></EditTextPreference>
+
+        <EditTextPreference android:title="@string/pref_board_columns"
+            android:key="board_columns"
+            android:summary="@string/pref_board_columns_summary"
+            android:numeric="integer"
+            android:maxLength="1"></EditTextPreference>
+
+
+
+
+
+
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

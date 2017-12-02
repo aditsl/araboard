@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"    package="es.puntoweb.board">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="es.puntoweb.board">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera"   android:required="true" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="es.puntoweb.board.MenuActivity"
+            android:name=".MenuActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -26,20 +30,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="es.puntoweb.board.BoardActivity"
+            android:name=".BoardActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="es.puntoweb.board.DownloadActivity"
+            android:name=".DownloadActivity"
             android:label="@string/title_activity_download"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name="es.puntoweb.board.BoardCreatorActivity">
-
-
-        </activity>
-
-
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BoardCreatorActivity"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            ></activity>
     </application>
 
 </manifest>

@@ -74,5 +74,25 @@ public  class Utils {
             return false;
     }
 
+    public static void makeDirIfNotExist(String path){
+        File file = new File(path);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+    }
+
+    public static void deleteDirRecursive(String path){
+        File dir = new File(path);
+        if (dir.isDirectory())
+        {
+            String[] children = dir.list();
+            for (int i = 0; i < children.length; i++)
+            {
+                new File(dir, children[i]).delete();
+            }
+        }
+
+
+    }
 
 }

@@ -2,21 +2,28 @@ package es.puntoweb.board;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 
@@ -41,26 +48,34 @@ public class MenuActivity extends AppCompatActivity {
 
     private void cargaMenu(){
         Resources res=getResources();
-        int cont=0;
-        int columna=1;
-        int fila=1;
-        for (int x=1; x<=boardData.length;x++){
-                int imgid = res.getIdentifier("imageButton"+ fila + columna, "id", getApplicationContext().getPackageName());
-                int txtid=res.getIdentifier("txt"+fila+columna,"id",getApplicationContext().getPackageName());
-                ImageButton btn = findViewById(imgid);
-                TextView txt = findViewById(txtid);
-                final AssetManager assetManager = getBaseContext().getAssets();
+        int numcolumnas=getLayoutColumns(true);
+        int numfilas=getLayoutColumns(false);
+        int x=1;
+        //We create the table layout
+        TableLayout table=findViewById(R.id.TablaInterna);
+        TableRow tableRow;
+        table.removeAllViews();
+        TableLayout.LayoutParams layoutParamsMatch=new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,TableLayout.LayoutParams.WRAP_CONTENT);
+        TableRow.LayoutParams layoutParamsBtn=new TableRow.LayoutParams((getWindowManager().getDefaultDisplay().getWidth()/numcolumnas)-10,(getWindowManager().getDefaultDisplay().getHeight()/numfilas)-40);
+        for (int c=0;c<numfilas;c++) {
+            tableRow = new TableRow(this);
+            tableRow.setLayoutParams(layoutParamsMatch);
+            for (int i = 0; i < numcolumnas; i++) {
+                ImageButton btn = new ImageButton(this);
+                TableRow.LayoutParams params = layoutParamsBtn;
+                btn.setLayoutParams(layoutParamsBtn);
+                btn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                tableRow.addView(btn);
                 try {
                     InputStream bitmap;
                     if (x<sdStart) {
-                        bitmap = getBaseContext().getAssets().open(boardData[x][0] + File.separator + Araboard.IMGDIR + File.separator + boardData[x][1]);
+                        bitmap = getBaseContext().getAssets().open(boardData[x][0] + File.separator + Araboard.IMGDIRNAME + File.separator + boardData[x][1]);
                     }else{
-                        File bmpfile=new File(Araboard.PATH+boardData[x][0]+File.separator+Araboard.IMGDIR+ File.separator+boardData[x][1]);
+                        File bmpfile=new File(Araboard.getImgPath(boardData[x][0])+boardData[x][1]);
                         bitmap = new FileInputStream(bmpfile);
                     }
                     Bitmap img= BitmapFactory.decodeStream(bitmap);
                     btn.setImageBitmap(img);
-                    txt.setText(boardData[x][0]);
                     final int cual=x;
                     btn.setOnClickListener( new View.OnClickListener() {
                                                 @Override
@@ -71,18 +86,24 @@ public class MenuActivity extends AppCompatActivity {
                                                 }
                                             }
                     );
-                    cont++;
-                    if(fila%4==0)
-                    {
-                        fila=1;
-                        columna++;
-                    }else{
-                        fila++;
-                    }
-                } catch (Exception e) {
-                    Utils.log( e.getMessage());
-                }
+
+
+                 }catch (IOException e){
+
+                 }
+                 x++;
+            }
+            table.addView(tableRow);
+            tableRow = new TableRow(this);
+            for (int i = 0; i < numcolumnas; i++) {
+                TextView txt = new TextView(this);
+                txt.setText(boardData[x][0]);
+                tableRow.addView(txt);
+
+            }
+            table.addView(tableRow);
         }
+
 
     }
 
@@ -102,7 +123,7 @@ public class MenuActivity extends AppCompatActivity {
                 if (Arrays.asList(fileNames).contains("tablero_comunicacion.xml"))
                 {
                     boardData[cont][0]=name;
-                    String[] firstImage=assetManager.list(name+ File.separator+Araboard.IMGDIR);
+                    String[] firstImage=assetManager.list(name+ File.separator+Araboard.IMGDIRNAME);
                     boardData[cont][1]=firstImage[0];
                     cont++;
                 }
@@ -111,7 +132,6 @@ public class MenuActivity extends AppCompatActivity {
             }
             //Second we load boards presents in sdcard String PATH = Environment.getExternalStorageDirectory() + "/araboard/";
             sdStart=cont;
-
             File file = new File(Araboard.PATH);
             if (file.isDirectory()) {
                 dirNames=file.list();
@@ -121,8 +141,10 @@ public class MenuActivity extends AppCompatActivity {
                         boardData[cont][0]=fi;
                         File images=new File(Araboard.PATH+fi+File.separator+"IMAGENES");
                         String [] firstImage=images.list();
-                        boardData[cont][1]=firstImage[0];
-                        cont++;
+                        if (firstImage.length>0) {
+                            boardData[cont][1] = firstImage[0];
+                            cont++;
+                        }
                     }
                 }
             }
@@ -139,7 +161,16 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
+        }else{
+
+        }
+        cargaMenu();
+    }
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -156,7 +187,8 @@ public class MenuActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent i=new Intent(getBaseContext(),SettingsActivity.class);
+            startActivityForResult(i,1);
         }else if (id == R.id.action_download){
             Intent i=new Intent(getBaseContext(),DownloadActivity.class);
             startActivityForResult(i,2);
@@ -166,5 +198,64 @@ public class MenuActivity extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private int getLayoutColumns(Boolean bol){
+        int files,columns=4;
+        int screen_layout=getResources().getConfiguration().screenLayout;
+        int display_mode = getResources().getConfiguration().orientation;
+
+        //Check if columns, rows are set in preferences
+        if ((Araboard.getMenuRows(getBaseContext())!=0) && !bol){
+            return     Araboard.getMenuRows(getBaseContext());
+        }
+        if ((Araboard.getMenuColums(getBaseContext())!=0) && bol){
+            return Araboard.getMenuColums(getBaseContext());
+        }
+        //Set default colums, rows diferent layouts
+           if (( screen_layout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+               if (display_mode == Configuration.ORIENTATION_PORTRAIT) {
+                   files=6;
+                   columns=5;
+               } else {
+                   columns=6;
+                   files=5;
+
+               }
+           }
+           else if (( screen_layout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+                if (display_mode == Configuration.ORIENTATION_PORTRAIT) {
+                    files=5;
+                    columns=5;
+                } else {
+                    columns=5;
+                    files=5;
+
+                }
+            }
+            else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
+                if (display_mode == Configuration.ORIENTATION_PORTRAIT) {
+                    files=4;
+                    columns=3;
+                } else {
+                    columns=4;
+                    files=3;
+                }
+            }
+            else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_SMALL) {
+                files=4;
+                columns=4;
+            }
+            else {
+                files=4;
+                columns=4;
+            }
+
+        if (bol)
+           return columns;
+        else
+            return files;
+
     }
 }

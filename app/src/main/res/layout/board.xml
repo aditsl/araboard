@@ -31,42 +31,47 @@
 
         <ImageButton
             android:id="@+id/imageButton11"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
             android:soundEffectsEnabled="false"
             android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/imageButton12"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
             android:soundEffectsEnabled="false"
             android:text="dialer_one"
             android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/imageButton13"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
             android:soundEffectsEnabled="false"
             android:text="dialer_one"
             android:textSize="20sp" />
+
         <ImageButton
             android:id="@+id/imageButton14"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
             android:soundEffectsEnabled="false"
             android:text="dialer_one"
             android:textSize="20sp" />
@@ -116,44 +121,48 @@
 
         <ImageButton
             android:id="@+id/imageButton21"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
             android:soundEffectsEnabled="false"
             android:text="dialer_one"
             android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/imageButton22"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
             android:soundEffectsEnabled="false"
             android:text="dialer_one"
             android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/imageButton23"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
             android:soundEffectsEnabled="false"
             android:text="dialer_one"
             android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/imageButton24"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
             android:soundEffectsEnabled="false"
             android:text="dialer_one"
             android:textSize="20sp" />
@@ -204,9 +213,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
+            android:soundEffectsEnabled="false"
             android:text="dialer_star"
             android:textSize="20sp" />
 
@@ -215,9 +225,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
+            android:soundEffectsEnabled="false"
             android:text="dialer_zero"
             android:textSize="20sp" />
 
@@ -226,9 +237,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
+            android:soundEffectsEnabled="false"
             android:text="dialer_pound"
             android:textSize="20sp" />
 
@@ -237,10 +249,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
 
+            android:soundEffectsEnabled="false"
             android:text="dialer_star"
             android:textSize="20sp" />
 
@@ -293,9 +306,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
+            android:soundEffectsEnabled="false"
             android:text="dialer_star"
             android:textSize="20sp" />
 
@@ -304,9 +318,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
+            android:soundEffectsEnabled="false"
             android:text="dialer_zero"
             android:textSize="20sp" />
 
@@ -315,9 +330,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
+            android:soundEffectsEnabled="false"
             android:text="dialer_pound"
             android:textSize="20sp" />
 
@@ -326,9 +342,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:soundEffectsEnabled="false"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:background="@android:color/background_light"
+            android:scaleType="centerInside"
+            android:soundEffectsEnabled="false"
             android:text="dialer_star"
             android:textSize="20sp" />
 

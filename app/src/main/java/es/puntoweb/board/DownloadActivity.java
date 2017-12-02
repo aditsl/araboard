@@ -45,6 +45,17 @@ public class DownloadActivity extends AppCompatActivity {
                 download();
             }
         });
+        txtUrl.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                                            @Override
+                                            public void onFocusChange(View view, boolean b) {
+                                               if (b==true){
+                                                   if (txtUrl.getText().toString().equals("URL")){
+                                                       txtUrl.setText("");
+                                                   }
+                                               }
+                                            }
+                                        }
+        );
     }
 
     public void download() {
@@ -144,8 +155,7 @@ public class DownloadActivity extends AppCompatActivity {
                 c.connect(); // Connection Complete here.!
                 int lenghtOfFile = c.getContentLength();
                 Log.d("Downloading Updates", "Lenght of file: " + lenghtOfFile);
-                String PATH = Environment.getExternalStorageDirectory() + "/araboard/";
-                file = new File(PATH);
+                file = new File(Araboard.PATH);
                 if (!file.exists()) {
                     file.mkdirs();
                 }
@@ -158,7 +168,6 @@ public class DownloadActivity extends AppCompatActivity {
                 while ((len1 = is.read(buffer)) != -1) {
                     total += len1;
                     publishProgress(""+(int)((total*100)/lenghtOfFile));
-
                     fos.write(buffer, 0, len1); // Write In FileOutputStream.
                 }
                 fos.flush();
