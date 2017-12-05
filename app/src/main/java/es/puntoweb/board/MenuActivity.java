@@ -6,10 +6,12 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -65,6 +67,7 @@ public class MenuActivity extends AppCompatActivity {
                 TableRow.LayoutParams params = layoutParamsBtn;
                 btn.setLayoutParams(layoutParamsBtn);
                 btn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                btn.setBackgroundColor(Color.WHITE);
                 tableRow.addView(btn);
                 try {
                     InputStream bitmap;
@@ -95,9 +98,10 @@ public class MenuActivity extends AppCompatActivity {
             }
             table.addView(tableRow);
             tableRow = new TableRow(this);
-            for (int i = 0; i < numcolumnas; i++) {
+            for (int i = 1+x-numcolumnas-1; i <=x-1; i++) {
                 TextView txt = new TextView(this);
-                txt.setText(boardData[x][0]);
+                txt.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                txt.setText(boardData[i][0]);
                 tableRow.addView(txt);
 
             }

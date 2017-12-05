@@ -1,13 +1,12 @@
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/TablaPrincipal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:stretchColumns="*"
-    android:weightSum="5"
-    >
+    android:weightSum="5">
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,391 +15,30 @@
         >
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tableView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:stretchColumns="*"
-    android:weightSum="4" >
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:weightSum="4" >
-
-        <ImageButton
-            android:id="@+id/imageButton11"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/tableBoard"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:textSize="20sp" />
+            android:layout_height="fill_parent"
+            android:stretchColumns="*"
+            android:weightSum="4">
 
-        <ImageButton
-            android:id="@+id/imageButton12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_one"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_one"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_one"
-            android:textSize="20sp" />
-
-
-    </TableRow>
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="0"
-        android:weightSum="4" >
-
-        <TextView
-            android:id="@+id/txtb11"
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/txtb12"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/txtb13"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/txtb14"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-    </TableRow>
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:weightSum="4" >
-
-
-        <ImageButton
-            android:id="@+id/imageButton21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_one"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_one"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_one"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_one"
-            android:textSize="20sp" />
-
-    </TableRow>
-    <TableRow
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_weight="0"
-    android:weightSum="4" >
-
-    <TextView
-        android:id="@+id/txtb21"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/txtb22"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/txtb23"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/txtb24"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"/>
-</TableRow>
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:weightSum="4" >
-
-        <ImageButton
-            android:id="@+id/imageButton31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_star"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_zero"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton33"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_pound"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton34"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-
-            android:soundEffectsEnabled="false"
-            android:text="dialer_star"
-            android:textSize="20sp" />
-
-
-    </TableRow>
-
-    <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="0"
-                android:weightSum="4" >
-
-                <TextView
-                    android:id="@+id/txtb131"
-                    android:layout_width="wrap_content"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/txtb32"
-                    android:layout_width="wrap_content"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/txtb33"
-                    android:layout_width="wrap_content"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/txtb34"
-                    android:layout_width="wrap_content"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
-            </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:weightSum="4" >
-
-        <ImageButton
-            android:id="@+id/imageButton41"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_star"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton42"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_zero"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton43"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_pound"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/imageButton44"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/background_light"
-            android:scaleType="centerInside"
-            android:soundEffectsEnabled="false"
-            android:text="dialer_star"
-            android:textSize="20sp" />
-
-
-        </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="0"
-        android:weightSum="4" >
-
-        <TextView
-            android:id="@+id/txtb41"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/txtb42"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/txtb43"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/txtb44"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-    </TableRow>
         </TableLayout>
     </TableRow>
+
     <TableRow
 
-        android:layout_height="fill_parent"
+        android:id="@+id/rowFrase"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
         android:layout_weight="1"
-        android:weightSum="1"
-        >
+        android:weightSum="1">
 
         <LinearLayout
             android:id="@+id/FraseContainer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            >
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="?attr/colorPrimary">
 
             <ImageButton
                 android:id="@+id/playButton"
@@ -408,32 +46,31 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/ic_media_play" />
 
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:weightSum="1"
-            >
-
-            <LinearLayout
-                android:id="@+id/Frase"
+            <HorizontalScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
-                android:orientation="horizontal"
-                android:weightSum="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
                 android:layout_weight="1"
-                >
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:id="@+id/Frase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/colorPrimary"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
 
-            </LinearLayout>
+                </LinearLayout>
 
-        </HorizontalScrollView>
+            </HorizontalScrollView>
 
             <ImageButton
                 android:id="@+id/deleteButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 app:srcCompat="@android:drawable/ic_delete" />
         </LinearLayout>
 

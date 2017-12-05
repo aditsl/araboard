@@ -1,8 +1,13 @@
 package es.puntoweb.board;
 
+import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +15,8 @@ import android.content.res.AssetManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 
@@ -22,7 +29,9 @@ import java.io.InputStreamReader;
 public class BoardActivity extends AppCompatActivity {
 
     private String folderName="ACCIONES";
+    Board matriz;
     Frase frase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +40,7 @@ public class BoardActivity extends AppCompatActivity {
         setContentView(R.layout.board);
         String folderName=getIntent().getStringExtra("BOARD");
         AssetManager assetManager = getBaseContext().getAssets();
-        Board matriz=new Board(folderName);
+        matriz=new Board(folderName);
         frase=Frase.getInstance();
         tablero=null;
         //We have to see if the board has ben downloaded or is an asset
@@ -49,7 +58,7 @@ public class BoardActivity extends AppCompatActivity {
 
         }
         AraboardParser parser=new AraboardParser(tablero, matriz);
-        loadBoard(matriz);
+        //loadBoard(matriz);
         ImageButton  playbtn = (ImageButton) findViewById(R.id.playButton);
         playbtn.setOnClickListener(new View.OnClickListener() {
                                        @Override
@@ -94,20 +103,38 @@ public class BoardActivity extends AppCompatActivity {
 
 
     private void loadBoard(Board board){
-        Resources res=getResources();
         int cont=0;
-        for (int fila=1; fila<=4;fila++){
-            for (int columna=1; columna<=4;columna++) {
-                int imgid = res.getIdentifier("imageButton"+ fila + columna, "id", getApplicationContext().getPackageName());
-                int txtid = res.getIdentifier("txtb"+ fila + columna, "id", getApplicationContext().getPackageName());
-                ImageButton btn = findViewById(imgid);
-                TextView txt = findViewById(txtid);
+        int numcolumnas=getLayoutColumns(true);
+        int numfilas=getLayoutColumns(false);
+        Resources res=getResources();
+        //We create the table layout
+        TableLayout table=findViewById(R.id.tableBoard);
+        TableRow tableRow;
+        table.removeAllViews();
+        TableLayout.LayoutParams layoutParamsMatch=new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,TableLayout.LayoutParams.WRAP_CONTENT);
+        TableRow.LayoutParams layoutParamsBtn=new TableRow.LayoutParams((getWindowManager().getDefaultDisplay().getWidth()/numcolumnas)-10,(getAvailableHeight(numfilas)/numfilas));
+        for (int c=1; c<=numfilas;c++){
+            tableRow = new TableRow(this);
+            tableRow.setLayoutParams(layoutParamsMatch);
+            for (int i=1; i<=numcolumnas;i++) {
+                //
+                if (numcolumnas*numfilas-1==cont){
+                    break;
+                }
+
+                ImageButton btn = new ImageButton(this);
+                TableRow.LayoutParams params = layoutParamsBtn;
+                btn.setLayoutParams(layoutParamsBtn);
+                btn.setBackgroundColor(Color.WHITE);
+                btn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                btn.setBackground(getResources().getDrawable(R.drawable.ripple_effect));
+                tableRow.addView(btn);
                 final AssetManager assetManager = getBaseContext().getAssets();
                 try {
                     //Some Araboard tableros has empty cells!
                     if (board.getElement(cont).getTexto()!=null) {
                         btn.setImageBitmap(board.getElement(cont).getImagen(getAssets()));
-                        txt.setText(board.getElement(cont).getTexto());
+                        //txt.setText(board.getElement(cont).getTexto());
                     }
                     final BoardActivity bA=this;
                     final Element element=board.getElement(cont);
@@ -137,6 +164,24 @@ public class BoardActivity extends AppCompatActivity {
                     Utils.log(e.getMessage());
                 }
             }
+            table.addView(tableRow);
+            tableRow = new TableRow(this);
+            TableRow.LayoutParams layoutParamsTxt=new TableRow.LayoutParams((getWindowManager().getDefaultDisplay().getWidth()/numcolumnas)-10,dpToPx(20));
+            tableRow.setLayoutParams(layoutParamsTxt);
+            for (int i = (c*numcolumnas)-numcolumnas; i < c*numcolumnas+numfilas; i++) {
+                TextView txt = new TextView(this);
+                txt.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                txt.setLayoutParams(layoutParamsTxt);
+                if (board.getElementSize()<=i){
+                    txt.setText("");
+                }else {
+                    txt.setText(board.getElement(i).getTexto());
+                }
+                //txt.setHeight(dpToPx(20));
+                tableRow.addView(txt);
+
+            }
+            table.addView(tableRow);
         }
 
     }
@@ -161,5 +206,68 @@ public class BoardActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        loadBoard(matriz);
+    }
+
+    private int getLayoutColumns(Boolean bol) {
+        int files, columns = 4;
+        //Check if columns, rows are set in preferences
+        if ((Araboard.getBoardRows(getBaseContext()) != 0) && !bol) {
+            return Araboard.getBoardRows(getBaseContext());
+        }
+        if ((Araboard.getBoardColums(getBaseContext()) != 0) && bol) {
+            return Araboard.getBoardColums(getBaseContext());
+        }
+        //Set default colums, rows diferent layouts
+        if (bol)
+            return matriz.getColumnas();
+        else
+            return matriz.getFilas();
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        loadBoard(matriz);
+
+    }
+
+    private int getAvailableHeight(int filas){
+        TableRow table=findViewById(R.id.rowFrase);
+        return getWindowManager().getDefaultDisplay().getHeight()-dpToPx(getSoftButtonsBarHeight())-getStatusBarHeight()-(dpToPx(20)*filas);
+
+    }
+
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+
+    private int getSoftButtonsBarHeight() {
+        Resources resources = getApplicationContext().getResources();
+        int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            return resources.getDimensionPixelSize(resourceId);
+        }
+        return 0;
+    }
+
+    private  int dpToPx(int dp) {
+        float density = getBaseContext().getResources()
+                .getDisplayMetrics()
+                .density;
+        return Math.round((float) dp * density);
     }
 }
