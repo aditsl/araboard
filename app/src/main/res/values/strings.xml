@@ -10,6 +10,7 @@
     <string name="wrong_url">Url incorrecta</string>
     <string name="action_board_creator">Crear Board</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="next">Siguiente</string>
 
 
     <!-- Araboard Preferences -->

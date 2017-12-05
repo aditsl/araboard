@@ -31,7 +31,7 @@ public class BoardActivity extends AppCompatActivity {
     private String folderName="ACCIONES";
     Board matriz;
     Frase frase;
-
+    private int page=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,9 +103,13 @@ public class BoardActivity extends AppCompatActivity {
 
 
     private void loadBoard(Board board){
-        int cont=0;
+
         int numcolumnas=getLayoutColumns(true);
         int numfilas=getLayoutColumns(false);
+        int cont=0;
+        if (page>0) {
+            cont =(page * numcolumnas * numfilas)-page;
+        }
         Resources res=getResources();
         //We create the table layout
         TableLayout table=findViewById(R.id.tableBoard);
@@ -117,17 +121,27 @@ public class BoardActivity extends AppCompatActivity {
             tableRow = new TableRow(this);
             tableRow.setLayoutParams(layoutParamsMatch);
             for (int i=1; i<=numcolumnas;i++) {
-                //
-                if (numcolumnas*numfilas-1==cont){
-                    break;
-                }
-
                 ImageButton btn = new ImageButton(this);
                 TableRow.LayoutParams params = layoutParamsBtn;
                 btn.setLayoutParams(layoutParamsBtn);
                 btn.setBackgroundColor(Color.WHITE);
                 btn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 btn.setBackground(getResources().getDrawable(R.drawable.ripple_effect));
+                //Is we have a custom Board matrix whe have to insert show next elements button
+                if (Araboard.getBoardOverride(getApplicationContext())) {
+                    if ((page*numfilas*numcolumnas)+(numcolumnas * numfilas) - (page+1) == cont) {
+                        btn.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
+                        btn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                page++;
+                                loadBoard(matriz);
+                            }
+                        });
+                        tableRow.addView(btn);
+                        break;
+                    }
+                }
                 tableRow.addView(btn);
                 final AssetManager assetManager = getBaseContext().getAssets();
                 try {
@@ -152,7 +166,6 @@ public class BoardActivity extends AppCompatActivity {
                                     LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
                                     btnNew.setLayoutParams(layoutParams);
                                     ll.addView(btnNew);
-
                                 }catch (Exception e){
 
                                 }
@@ -168,14 +181,26 @@ public class BoardActivity extends AppCompatActivity {
             tableRow = new TableRow(this);
             TableRow.LayoutParams layoutParamsTxt=new TableRow.LayoutParams((getWindowManager().getDefaultDisplay().getWidth()/numcolumnas)-10,dpToPx(20));
             tableRow.setLayoutParams(layoutParamsTxt);
-            for (int i = (c*numcolumnas)-numcolumnas; i < c*numcolumnas+numfilas; i++) {
+            int start=(page*numcolumnas*numfilas)+(c*numcolumnas)-numcolumnas-page;
+            int end=(page*numcolumnas*numfilas)+c*numcolumnas+numfilas;
+            for (int i = start; i < end; i++) {
                 TextView txt = new TextView(this);
                 txt.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                 txt.setLayoutParams(layoutParamsTxt);
+                //More columns than Board
                 if (board.getElementSize()<=i){
                     txt.setText("");
                 }else {
-                    txt.setText(board.getElement(i).getTexto());
+                    //Inser next slide button if it is last icon of the page
+                    if (Araboard.getBoardOverride(getApplicationContext())) {
+                        if ( i+1==numcolumnas*numfilas*page+(numcolumnas*numfilas)-page) {
+                            txt.setText(getText(R.string.next));
+                        }else{
+                            txt.setText(board.getElement(i).getTexto());
+                        }
+                    }else {
+                        txt.setText(board.getElement(i).getTexto());
+                    }
                 }
                 //txt.setHeight(dpToPx(20));
                 tableRow.addView(txt);
@@ -216,13 +241,14 @@ public class BoardActivity extends AppCompatActivity {
     }
 
     private int getLayoutColumns(Boolean bol) {
-        int files, columns = 4;
         //Check if columns, rows are set in preferences
-        if ((Araboard.getBoardRows(getBaseContext()) != 0) && !bol) {
-            return Araboard.getBoardRows(getBaseContext());
-        }
-        if ((Araboard.getBoardColums(getBaseContext()) != 0) && bol) {
-            return Araboard.getBoardColums(getBaseContext());
+        if (Araboard.getBoardOverride(getBaseContext())){
+            if ((Araboard.getBoardRows(getBaseContext()) != 0) && !bol) {
+                return Araboard.getBoardRows(getBaseContext());
+            }
+            if ((Araboard.getBoardColums(getBaseContext()) != 0) && bol) {
+                return Araboard.getBoardColums(getBaseContext());
+            }
         }
         //Set default colums, rows diferent layouts
         if (bol)
@@ -241,7 +267,7 @@ public class BoardActivity extends AppCompatActivity {
 
     private int getAvailableHeight(int filas){
         TableRow table=findViewById(R.id.rowFrase);
-        return getWindowManager().getDefaultDisplay().getHeight()-dpToPx(getSoftButtonsBarHeight())-getStatusBarHeight()-(dpToPx(20)*filas);
+        return getWindowManager().getDefaultDisplay().getHeight()-getSoftButtonsBarHeight()-getStatusBarHeight()-(dpToPx(20)*filas);
 
     }
 

@@ -58,13 +58,12 @@ public class MenuActivity extends AppCompatActivity {
         TableRow tableRow;
         table.removeAllViews();
         TableLayout.LayoutParams layoutParamsMatch=new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,TableLayout.LayoutParams.WRAP_CONTENT);
-        TableRow.LayoutParams layoutParamsBtn=new TableRow.LayoutParams((getWindowManager().getDefaultDisplay().getWidth()/numcolumnas)-10,(getWindowManager().getDefaultDisplay().getHeight()/numfilas)-40);
+        TableRow.LayoutParams layoutParamsBtn=new TableRow.LayoutParams((getWindowManager().getDefaultDisplay().getWidth()/numcolumnas)-10,(getAvailableHeight(numfilas)/numfilas)-40);
         for (int c=0;c<numfilas;c++) {
             tableRow = new TableRow(this);
             tableRow.setLayoutParams(layoutParamsMatch);
             for (int i = 0; i < numcolumnas; i++) {
                 ImageButton btn = new ImageButton(this);
-                TableRow.LayoutParams params = layoutParamsBtn;
                 btn.setLayoutParams(layoutParamsBtn);
                 btn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 btn.setBackgroundColor(Color.WHITE);
@@ -209,7 +208,6 @@ public class MenuActivity extends AppCompatActivity {
         int files,columns=4;
         int screen_layout=getResources().getConfiguration().screenLayout;
         int display_mode = getResources().getConfiguration().orientation;
-
         //Check if columns, rows are set in preferences
         if ((Araboard.getMenuRows(getBaseContext())!=0) && !bol){
             return     Araboard.getMenuRows(getBaseContext());
@@ -261,5 +259,37 @@ public class MenuActivity extends AppCompatActivity {
         else
             return files;
 
+    }
+
+    private int getAvailableHeight(int filas){
+        TableRow table=findViewById(R.id.rowFrase);
+        return getWindowManager().getDefaultDisplay().getHeight()-getSoftButtonsBarHeight()-getStatusBarHeight();
+
+    }
+
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+
+    private int getSoftButtonsBarHeight() {
+        Resources resources = getApplicationContext().getResources();
+        int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            return resources.getDimensionPixelSize(resourceId);
+        }
+        return 0;
+    }
+
+    private  int dpToPx(int dp) {
+        float density = getBaseContext().getResources()
+                .getDisplayMetrics()
+                .density;
+        return Math.round((float) dp * density);
     }
 }

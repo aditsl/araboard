@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Board</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_download">Jeitsi</string>
 
 
     <!-- Araboard Strings -->
@@ -9,9 +10,24 @@
     <string name="fill_url">Sar esazu URL egoki bat</string>
     <string name="wrong_url">Url akastuna</string>
     <string name="action_board_creator">Board berria sortu</string>
+    <string name="title_activity_settings">Aukerak</string>
+    <string name="next">Hurrengoa</string>
 
 
     <!-- Araboard Preferences -->
-    <string name="pref_sms_storage_title">Hasierako orria</string>
+    <string name="pref_initial_page">Página inicial</string>
+    <string name="pref_inital_page_rows">Número de filas</string>
+    <string name="pref_inital_page_rows_summary">Especifica el número de filas con iconos.</string>
+    <string name="pref_inital_page_columns">Número de columnas</string>
+    <string name="pref_inital_page_columns_summary">Especifica el número de columnas con iconos.</string>
+
+    <string name="pref_board">Tablero Araboard</string>
+    <string name="pref_board_override">Cambiar distribución original de los Tableros</string>
+    <string name="pref_board_override_summary">Forzar un número de filas y columnas iguales para todos los Tableros</string>
+    <string name="pref_board_rows">Número de filas</string>
+    <string name="pref_board_rows_summary">Especifica el número de filas con iconos.</string>
+    <string name="pref_board_columns">Número de columnas</string>
+    <string name="pref_board_columns_summary">Especifica el número de columnas con iconos.</string>
+
 
 </resources>
