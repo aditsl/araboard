@@ -11,9 +11,12 @@ import android.preference.PreferenceManager;
 
 public class SettingsActivity extends PreferenceActivity {
 
+    private static Boolean override;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        override=Araboard.getBoardOverride(getApplicationContext());
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
 
     }
@@ -22,7 +25,7 @@ public class SettingsActivity extends PreferenceActivity {
 
 
 
-    public static class MyPreferenceFragment extends PreferenceFragment
+    public  static class MyPreferenceFragment extends PreferenceFragment
     {
         @Override
         public void onCreate(final Bundle savedInstanceState)
@@ -46,7 +49,7 @@ public class SettingsActivity extends PreferenceActivity {
         }
 
         private void   getInitialConfig(){
-            if (!Araboard.getBoardOverride(getContext())){
+            if (!override){
                showBoardPrefs(false);
             }
 

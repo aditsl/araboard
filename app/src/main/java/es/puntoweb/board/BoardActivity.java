@@ -126,7 +126,8 @@ public class BoardActivity extends AppCompatActivity {
                 btn.setLayoutParams(layoutParamsBtn);
                 btn.setBackgroundColor(Color.WHITE);
                 btn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                btn.setBackground(getResources().getDrawable(R.drawable.ripple_effect));
+                if (Build.VERSION.SDK_INT>21)
+                    btn.setBackground(getResources().getDrawable(R.drawable.ripple_effect));
                 //Is we have a custom Board matrix whe have to insert show next elements button
                 if (Araboard.getBoardOverride(getApplicationContext())) {
                     if ((page*numfilas*numcolumnas)+(numcolumnas * numfilas) - (page+1) == cont) {
@@ -177,14 +178,17 @@ public class BoardActivity extends AppCompatActivity {
                     Utils.log(e.getMessage());
                 }
             }
+            // Load of row containing Text Labels for the images
             table.addView(tableRow);
             tableRow = new TableRow(this);
             TableRow.LayoutParams layoutParamsTxt=new TableRow.LayoutParams((getWindowManager().getDefaultDisplay().getWidth()/numcolumnas)-10,dpToPx(20));
-            tableRow.setLayoutParams(layoutParamsTxt);
-            int start=(page*numcolumnas*numfilas)+(c*numcolumnas)-numcolumnas-page;
-            int end=(page*numcolumnas*numfilas)+c*numcolumnas+numfilas;
+            LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+            tableRow.setLayoutParams(layoutParams);
+            int start=(page*numcolumnas*numfilas)+((c-1)*numcolumnas)-page;
+            int end=(page*numcolumnas*numfilas)+((c-1)*numcolumnas)-page+numcolumnas;
             for (int i = start; i < end; i++) {
                 TextView txt = new TextView(this);
+
                 txt.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                 txt.setLayoutParams(layoutParamsTxt);
                 //More columns than Board
