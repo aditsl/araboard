@@ -146,7 +146,7 @@ public class BoardActivity extends AppCompatActivity {
                 tableRow.addView(btn);
                 final AssetManager assetManager = getBaseContext().getAssets();
                 try {
-                    //Some Araboard tableros has empty cells!
+                    //Some Araboard "tableros" have empty cells!
                     if (board.getElement(cont).getTexto()!=null) {
                         btn.setImageBitmap(board.getElement(cont).getImagen(getAssets()));
                         //txt.setText(board.getElement(cont).getTexto());
@@ -188,7 +188,6 @@ public class BoardActivity extends AppCompatActivity {
             int end=(page*numcolumnas*numfilas)+((c-1)*numcolumnas)-page+numcolumnas;
             for (int i = start; i < end; i++) {
                 TextView txt = new TextView(this);
-
                 txt.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
                 txt.setLayoutParams(layoutParamsTxt);
                 //More columns than Board

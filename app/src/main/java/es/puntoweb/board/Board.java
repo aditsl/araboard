@@ -2,14 +2,16 @@ package es.puntoweb.board;
 
 import android.view.View;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
+
 
 /**
  * Created by yosu on 05/11/2017.
  */
 
-public class Board {
+public class Board implements  Iterable<Element>{
 
     private List<Element> elements;
     private String carpeta;
@@ -20,6 +22,29 @@ public class Board {
         elements = new ArrayList<Element>();
         this.carpeta=carpeta;
     }
+
+    @Override
+    public Iterator<Element> iterator() {
+        return new Iterator<Element> () {
+            private final Iterator<Element> iter = elements.iterator();
+
+            @Override
+            public boolean hasNext() {
+                return iter.hasNext();
+            }
+
+            @Override
+            public Element next() {
+                return iter.next();
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException("no changes allowed");
+            }
+        };
+    }
+
 
     Board(){
         elements = new ArrayList<Element>();

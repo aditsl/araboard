@@ -10,9 +10,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearSmoothScroller;
 import android.util.Log;
+import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -24,11 +28,21 @@ public class DownloadActivity extends AppCompatActivity {
 
     Button btnDownload;
     TextView txtUrl;
+    TextView txtDesplazamiento;
 
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
     private ProgressDialog mProgressDialog;
     public String app_name="board" ;
     public String urlpath ;
+    private final String ARABOARD_URL="http://www.arasaac.org/zona_descargas/materiales";
+
+
+    String[][]  descargables={{"Máquinas - ARASAAC","/889/MAQUINAS.zip","es"},
+                {"Primavera - ARASAAC","/935/Actividades%20primavera.zip","es"},
+                {"Ricitos de Oro - ARASAAC","/974/RICITOS_DE_ORO.zip","es"},
+                {"Koloreak - ARASAAC","/1089/KOLOREAK_1.zip","eu"},
+                {"Gorputzeko Atalak -ARASAAC","/1102/GORPUTZEKO_ATALAK_II.zip","eu"}
+            };
 
     File file;
 
@@ -45,6 +59,7 @@ public class DownloadActivity extends AppCompatActivity {
                 download();
             }
         });
+        cargaDescargables();
         txtUrl.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                                             @Override
                                             public void onFocusChange(View view, boolean b) {
@@ -56,6 +71,41 @@ public class DownloadActivity extends AppCompatActivity {
                                             }
                                         }
         );
+    }
+
+    private void cargaDescargables(){
+        LinearLayout lay= (LinearLayout) findViewById(R.id.descargables);
+        lay.removeAllViews();
+        for (int x=0;x<descargables.length;x++){
+            LinearLayout lay_child=new LinearLayout(this);
+            lay_child.setOrientation(LinearLayout.HORIZONTAL);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            TextView txt=new TextView(this);
+            txt.setText(descargables[x][0]);
+            txt.setTextSize(22);
+            Button boton=new Button(this);
+            if (descargables[x][2]=="es") {
+                boton.setBackgroundResource(R.drawable.spanish);
+            }else{
+                boton.setBackgroundResource(R.drawable.eu);
+            }
+
+            LinearLayout.LayoutParams layoutparams= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutparams.width=60;
+            layoutparams.height=40;
+            boton.setLayoutParams(layoutparams);
+            final String texto=descargables[x][1];
+            txt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    txtUrl.setText(ARABOARD_URL+texto);
+                }
+            });
+            lay_child.addView(boton);
+            lay_child.addView(txt);
+            lay.addView(lay_child,params);
+        }
     }
 
     public void download() {

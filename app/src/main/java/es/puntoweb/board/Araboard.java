@@ -48,14 +48,26 @@ public class Araboard {
     }
 
     public static int getMenuRows(Context context){
+        int rows=0;
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(context);
-        return Integer.parseInt(SP.getString("menu_rows","0"));
+        try {
+            rows=Integer.parseInt(SP.getString("menu_rows","0"));
+        }catch(Exception e){
+
+        }
+        return rows;
 
     }
 
     public static int getMenuColums(Context context){
+        int col=0;
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(context);
-        return Integer.parseInt(SP.getString("menu_columns","0"));
+        try {
+            col=Integer.parseInt(SP.getString("menu_columns","0"));
+        }catch(Exception e){
+
+        }
+        return col;
     }
 
 
